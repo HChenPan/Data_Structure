@@ -1,0 +1,1 @@
+add_executable(GeneralizedList-H-T GeneralizedList-H-T.c)

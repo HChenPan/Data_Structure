@@ -1,0 +1,1 @@
+add_executable(NearlyOptimalSearchTree NearlyOptimalSearchTree.c)

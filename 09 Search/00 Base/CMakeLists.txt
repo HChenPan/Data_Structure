@@ -1,0 +1,1 @@
+add_executable(Base Base.c)

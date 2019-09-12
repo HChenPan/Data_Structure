@@ -1,0 +1,1 @@
+add_executable(Tri_BinaryTree Tri_BinaryTree.c)

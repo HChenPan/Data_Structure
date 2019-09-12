@@ -1,0 +1,1 @@
+add_executable(2-InsertSort 2-InsertSort.c)

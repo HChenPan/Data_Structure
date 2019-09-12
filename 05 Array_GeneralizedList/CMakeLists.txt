@@ -1,0 +1,6 @@
+add_subdirectory("01 SequenceArray")
+add_subdirectory("02 TripleSparseMatrix")
+add_subdirectory("03 RowLinkSparseMatrix")
+add_subdirectory("04 CrossList")
+add_subdirectory("05 GeneralizedList-H&T")
+add_subdirectory("06 GeneralizedList-E")

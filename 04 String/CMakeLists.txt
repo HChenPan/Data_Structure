@@ -1,0 +1,5 @@
+add_subdirectory("01 SequenceString")
+add_subdirectory("02 HeapString")
+add_subdirectory("03 BlockChainString")
+add_subdirectory("04 KMP")
+add_subdirectory("05 WordIndexTable")

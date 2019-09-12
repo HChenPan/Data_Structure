@@ -1,0 +1,1 @@
+add_executable(StaticLinkedListType StaticLinkedListType.c)

@@ -1,0 +1,1 @@
+add_executable(MergeList MergeList.c)
