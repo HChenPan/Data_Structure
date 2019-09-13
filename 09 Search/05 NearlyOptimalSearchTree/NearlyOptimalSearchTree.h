@@ -22,29 +22,29 @@ typedef BiTree SOSTree;
 char ch[] = "\0ABCDEFGHI";
 
 /* 静态树表查找函数列表 */
-/*━━━━━━━━━━┓
-┃(01)建立累计权值表。┃
-┗━━━━━━━━━━*/
+/**
+(01)建立累计权值表。
+**/
 void FindSW(float sw[], Table T);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(02)找出左右累计权值差最小的分界点。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(02)找出左右累计权值差最小的分界点。
+**/
 int MinSW(float sw[], int low, int high);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(03)算法9.3：次优查找树构造函数。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法9.3：次优查找树构造函数。 
+**/
 void SecondOptimal(BiTree *BT, ElemType_Search R[], float sw[], int low, int high);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(04)算法9.4：用有序表T构造次优查找树。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法9.4：用有序表T构造次优查找树。
+**/
 Status CreateSOSTree(SOSTree *BT, Table T);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(5)判断关键字key是否在次优查找树BT中。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(5)判断关键字key是否在次优查找树BT中。
+**/
 Status Search_SOST(SOSTree BT, KeyType key);
 
 
@@ -76,9 +76,9 @@ int MinSW(float sw[], int low, int high) {
     return j;
 }
 
-/*════╗
-║ 算法9.3║
-╚════*/
+/**
+ 算法9.3
+**/
 void SecondOptimal(BiTree *BT, ElemType_Search R[], float sw[], int low, int high) {
     int i;
 
@@ -98,9 +98,9 @@ void SecondOptimal(BiTree *BT, ElemType_Search R[], float sw[], int low, int hig
         SecondOptimal(&((*BT)->rchild), R, sw, i + 1, high);
 }
 
-/*════╗
-║ 算法9.4║
-╚════*/
+/**
+ 算法9.4
+**/
 Status CreateSOSTree(SOSTree *BT, Table T) {
     float sw[T.length + 1];
 

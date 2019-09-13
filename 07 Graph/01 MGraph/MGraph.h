@@ -50,110 +50,110 @@ Status visited[MAX_VERTEX_NUM + 1];        //标志数组
 void (*VisitFunc)(VertexType_M e);        //函数指针变量
 
 /* 图、表（数组表示法）函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)算法7.1：创建图、表。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)算法7.1：创建图、表。 
+**/
 Status CreateGraph_M(FILE *fp, MGraph *G);
 
-/*━━━━━━━━┓
-┃(02)构造有向图。┃
-┗━━━━━━━━*/
+/**
+(02)构造有向图。
+**/
 Status CreateDG_M(FILE *fp, MGraph *G);
 
-/*━━━━━━━━┓
-┃(03)构造有向网。┃
-┗━━━━━━━━*/
+/**
+(03)构造有向网。
+**/
 Status CreateDN_M(FILE *fp, MGraph *G);
 
-/*━━━━━━━━┓
-┃(04)构造无向图。┃
-┗━━━━━━━━*/
+/**
+(04)构造无向图。
+**/
 Status CreateUDG_M(FILE *fp, MGraph *G);
 
-/*━━━━━━━━━━━━━┓
-┃(05)算法7.2：构造无向网。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(05)算法7.2：构造无向网。 
+**/
 Status CreateUDN_M(FILE *fp, MGraph *G);
 
-/*━━━━━━━━━┓
-┃(06)清空图（网）。┃
-┗━━━━━━━━━*/
+/**
+(06)清空图（网）。
+**/
 void ClearGraph_M(MGraph *G);
 
-/*━━━━━━━━━━━┓
-┃(07)寻找顶点u的位置。 ┃
-┗━━━━━━━━━━━*/
+/**
+(07)寻找顶点u的位置。 
+**/
 int LocateVex_M(MGraph G, VertexType_M u);
 
-/*━━━━━━━━━━━━┓
-┃(08)返回第v个结点的值。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(08)返回第v个结点的值。 
+**/
 VertexType_M GetVex_M(MGraph G, int order);
 
-/*━━━━━━━━━━━┓
-┃(09)对顶点v赋值value。┃
-┗━━━━━━━━━━━*/
+/**
+(09)对顶点v赋值value。
+**/
 Status PutVex_M(MGraph *G, VertexType_M v, VertexType_M value);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(10)返回v的第一个邻接顶点序号。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(10)返回v的第一个邻接顶点序号。 
+**/
 int FirstAdjVex_M(MGraph G, VertexType_M v);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(11)返回v相对于w的下一个邻接顶点序号。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(11)返回v相对于w的下一个邻接顶点序号。
+**/
 int NextAdjVex_M(MGraph G, VertexType_M v, VertexType_M w);
 
-/*━━━━━━━━━━┓
-┃(12)插入顶点v到图。 ┃
-┗━━━━━━━━━━*/
+/**
+(12)插入顶点v到图。 
+**/
 Status InsertVex_M(MGraph *G, VertexType_M v);
 
-/*━━━━━━━━━━━┓
-┃(13)从图中删除顶点v。 ┃
-┗━━━━━━━━━━━*/
+/**
+(13)从图中删除顶点v。 
+**/
 Status DeleteVex_M(MGraph *G, VertexType_M v);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(14)插入弧<v,w>到图,弧的相关信息InfoType可选。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(14)插入弧<v,w>到图,弧的相关信息InfoType可选。
+**/
 Status InsertArc_M(MGraph *G, VertexType_M v, VertexType_M w, VRType adj, ...);
 
-/*━━━━━━━━━┓
-┃(15)删除弧<v,w>。 ┃
-┗━━━━━━━━━*/
+/**
+(15)删除弧<v,w>。 
+**/
 Status DeleteArc_M(MGraph *G, VertexType_M v, VertexType_M w);
 
-/*━━━━━━━━━━━━━━┓
-┃(16)算法7.4：深度优先遍历。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(16)算法7.4：深度优先遍历。 
+**/
 void DFSTraverse_M(MGraph G, void(Visit)(VertexType_M));
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(17)算法7.5：深度优先遍历核心函数。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(17)算法7.5：深度优先遍历核心函数。 
+**/
 void DFS_M(MGraph G, int v);
 
-/*━━━━━━━━━━━━━━┓
-┃(18)算法7.6：广度优先遍历。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(18)算法7.6：广度优先遍历。 
+**/
 void BFSTraverse_M(MGraph G, void(Visit)(VertexType_M));
 
-/*━━━━━━━━━┓
-┃(19)输出图（表）。┃
-┗━━━━━━━━━*/
+/**
+(19)输出图（表）。
+**/
 void OutputMGraph(MGraph G);
 
-/*━━━━━━━━━━━┓
-┃(20)录入弧的相关信息。┃
-┗━━━━━━━━━━━*/
+/**
+(20)录入弧的相关信息。
+**/
 void Input(FILE *fp, InfoType *info);
 
 
-/*════╗
-║ 算法7.1║
-╚════*/
+/**
+ 算法7.1
+**/
 Status CreateGraph_M(FILE *fp, MGraph *G) {
     Scanf(fp, "%d", &((*G).kind));
 
@@ -280,9 +280,9 @@ Status CreateUDG_M(FILE *fp, MGraph *G) {
     return OK;
 }
 
-/*════╗
-║ 算法7.2║
-╚════*/
+/**
+ 算法7.2
+**/
 Status CreateUDN_M(FILE *fp, MGraph *G) {
     int i, j, k;
     VertexType_M v1, v2;
@@ -518,9 +518,9 @@ Status DeleteArc_M(MGraph *G, VertexType_M v, VertexType_M w) {
     return OK;
 }
 
-/*════╗
-║ 算法7.4║
-╚════*/
+/**
+ 算法7.4
+**/
 void DFSTraverse_M(MGraph G, void(Visit)(VertexType_M)) {
     int v;
 
@@ -535,9 +535,9 @@ void DFSTraverse_M(MGraph G, void(Visit)(VertexType_M)) {
     }
 }
 
-/*════╗
-║ 算法7.5║
-╚════*/
+/**
+ 算法7.5
+**/
 void DFS_M(MGraph G, int v) {
     int w;
 
@@ -551,9 +551,9 @@ void DFS_M(MGraph G, int v) {
     }
 }
 
-/*════╗
-║ 算法7.6║
-╚════*/
+/**
+ 算法7.6
+**/
 void BFSTraverse_M(MGraph G, void(Visit)(VertexType_M)) {
     int v, w;
     LinkQueue Q;

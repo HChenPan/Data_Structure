@@ -35,64 +35,64 @@ typedef ThrBiNode *ThrBiTree;
 ThrBiTree pre;                                    //指向当前访问结点的上一个结点
 
 /* 线索二叉树函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)按先序序列构造二叉树，并建立孩子标志(无线索化)。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)按先序序列构造二叉树，并建立孩子标志(无线索化)。
+**/
 Status CreateBiTree_Thr(FILE *fp, ThrBiTree *T);
 
-/*━━━━━━━━━━━━━━┓
-┃(02)算法6.7：中序全线索化。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(02)算法6.7：中序全线索化。 
+**/
 void InTheading_Thr(ThrBiTree p);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法6.6：中序遍历二叉树T，并将其全线索化。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法6.6：中序遍历二叉树T，并将其全线索化。
+**/
 Status InOrderThreading_Thr(ThrBiTree *Thrt, ThrBiTree T);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)算法6.5：中序遍历中序全线索二叉树（非递归算法）。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法6.5：中序遍历中序全线索二叉树（非递归算法）。 
+**/
 Status InOrderTraverse_Thr(ThrBiTree Thrt, void(Visit)(TElemType_Thr));
 
-/*━━━━━━━━━━┓
-┃(05)先序后继线索化。┃
-┗━━━━━━━━━━*/
+/**
+(05)先序后继线索化。
+**/
 void PreTheading_Thr(ThrBiTree p);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(06)先序遍历二叉树T，并将其后继线索化。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(06)先序遍历二叉树T，并将其后继线索化。 
+**/
 Status PreOrderThreading_Thr(ThrBiTree *Thrt, ThrBiTree T);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(07)先序遍历前序后继线索二叉树（非递归算法）。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)先序遍历前序后继线索二叉树（非递归算法）。
+**/
 Status PreOrderTraverse_Thr(ThrBiTree Thrt, void(Visit)(TElemType_Thr));
 
-/*━━━━━━━━━━┓
-┃(08)后序后继线索化。┃
-┗━━━━━━━━━━*/
+/**
+(08)后序后继线索化。
+**/
 void PosTheading_Thr(ThrBiTree p);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(09)后序遍历二叉树T，并将其后继线索化。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(09)后序遍历二叉树T，并将其后继线索化。 
+**/
 Status PosOrderThreading_Thr(ThrBiTree *Thrt, ThrBiTree T);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(10)后序遍历后序后继线索二叉树（非递归算法）。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(10)后序遍历后序后继线索二叉树（非递归算法）。
+**/
 Status PosOrderTraverse_Thr(ThrBiTree Thrt, void(Visit)(TElemType_Thr));
 
-/*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(11)层序遍历二叉树建立各结点的双亲结点指针。┃
-┗━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(11)层序遍历二叉树建立各结点的双亲结点指针。
+**/
 void ParentPtr_Thr(ThrBiTree Thrt);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(12)在后序遍历后序后继线索二叉树时，寻找结点p的后继。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(12)在后序遍历后序后继线索二叉树时，寻找结点p的后继。 
+**/
 ThrBiTree Pos_NextPtr_Thr(ThrBiTree Thrt, ThrBiTree p);
 
 Status CreateBiTree_Thr(FILE *fp, ThrBiTree *T) {
@@ -124,9 +124,9 @@ Status CreateBiTree_Thr(FILE *fp, ThrBiTree *T) {
     return OK;
 }
 
-/*════╗
-║ 算法6.7║
-╚════*/
+/**
+ 算法6.7
+**/
 void InTheading_Thr(ThrBiTree p) {
     if (p) {
         InTheading_Thr(p->lchild);                //线索化左子树
@@ -149,9 +149,9 @@ void InTheading_Thr(ThrBiTree p) {
     }
 }
 
-/*════╗
-║ 算法6.6║
-╚════*/
+/**
+ 算法6.6
+**/
 Status InOrderThreading_Thr(ThrBiTree *Thrt, ThrBiTree T)    //头结点后继回指
 {
     *Thrt = (ThrBiTree) malloc(sizeof(ThrBiNode));
@@ -179,9 +179,9 @@ Status InOrderThreading_Thr(ThrBiTree *Thrt, ThrBiTree T)    //头结点后继�
     return OK;
 }
 
-/*════╗
-║ 算法6.5║
-╚════*/
+/**
+ 算法6.5
+**/
 Status InOrderTraverse_Thr(ThrBiTree Thrt, void(Visit)(TElemType_Thr)) {
     ThrBiTree p = Thrt->lchild;                    //p指向二叉树根结点
 

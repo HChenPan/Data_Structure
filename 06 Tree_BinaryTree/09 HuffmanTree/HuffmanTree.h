@@ -31,39 +31,39 @@ typedef char *HCNode;
 typedef HCNode *HuffmanCode;        //动态分配数组存储哈夫曼编码表
 
 /* 哈夫曼树函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)构造空树HT(初始化树)。┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)构造空树HT(初始化树)。
+**/
 void InitTree_HT(HuffmanTree *HT);
 
-/*━━━━━━━━━┓
-┃(02)建立哈夫曼树。┃
-┗━━━━━━━━━*/
+/**
+(02)建立哈夫曼树。
+**/
 Status CreateHuffmanTree_HT(FILE *fp, HuffmanTree *HT);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)在哈夫曼树结点[1...end]中依次选出权值最小且未编入树的两个结点的序号order_1、order_2。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)在哈夫曼树结点[1...end]中依次选出权值最小且未编入树的两个结点的序号order_1、order_2。 
+**/
 Status Select_HT(HuffmanTree HT, int end, int *order_1, int *order_2);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(04-1)算法6.12：逆序计算哈夫曼编码值。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(04-1)算法6.12：逆序计算哈夫曼编码值。
+**/
 Status HuffmanCodeing_HT_1(HuffmanTree HT, HuffmanCode *HC);
 
-/*━━━━━━━━━━━━━━━━━━━━━┓
-┃(04-2)算法6.13：先序遍历计算哈夫曼编码值。┃
-┗━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04-2)算法6.13：先序遍历计算哈夫曼编码值。
+**/
 Status HuffmanCodeing_HT_2(HuffmanTree HT, HuffmanCode *HC);
 
-/*━━━━━━━━━┓
-┃(05)展示哈夫曼树。┃
-┗━━━━━━━━━*/
+/**
+(05)展示哈夫曼树。
+**/
 void ShowHuffmanTree_HT(HuffmanTree HT);
 
-/*━━━━━━━━━━┓
-┃(06)打印哈夫曼编码。┃
-┗━━━━━━━━━━*/
+/**
+(06)打印哈夫曼编码。
+**/
 void ShowHuffmanCode_HT(HuffmanTree HT, HuffmanCode HC);
 
 void InitTree_HT(HuffmanTree *HT) {
@@ -173,9 +173,9 @@ Status Select_HT(HuffmanTree HT, int end, int *order_1, int *order_2) {
     return OK;
 }
 
-/*═════╗
-║ 算法6.12 ║
-╚═════*/
+/**
+ 算法6.12 
+**/
 Status HuffmanCodeing_HT_1(HuffmanTree HT, HuffmanCode *HC) {
     char *code;
     int n, i;
@@ -210,9 +210,9 @@ Status HuffmanCodeing_HT_1(HuffmanTree HT, HuffmanCode *HC) {
     free(code);
 }
 
-/*═════╗
-║ 算法6.13 ║
-╚═════*/
+/**
+ 算法6.13 
+**/
 Status HuffmanCodeing_HT_2(HuffmanTree HT, HuffmanCode *HC) {
     int m, n, i;
     int cdlen;
@@ -279,7 +279,7 @@ Status HuffmanCodeing_HT_2(HuffmanTree HT, HuffmanCode *HC) {
 void ShowHuffmanTree_HT(HuffmanTree HT) {
     int i;
 
-    printf("┏━━━┳━━━┳━━━┳━━━┳━━━┓\n");
+    printf("┏━┳━┳━┳━┳━┓\n");
     printf("┃*order┃weight┃parent┃lchild┃rchild┃\n");
     for (i = 0; i <= 2 * HT[0].weight - 1; i++) {
         if (i == 0)
@@ -288,17 +288,17 @@ void ShowHuffmanTree_HT(HuffmanTree HT) {
             printf("┃  %2d  ┃ %4d ┃  %2d  ┃  %2d  ┃  %2d  ┃\n", i, HT[i].weight, HT[i].parent, HT[i].lchild,
                    HT[i].rchild);
     }
-    printf("┗━━━┻━━━┻━━━┻━━━┻━━━┛\n");
+    printf("┗━┻━┻━┻━┻━┛\n");
 }
 
 void ShowHuffmanCode_HT(HuffmanTree HT, HuffmanCode HC) {
     int i;
 
-    printf("┏━━━┳━━━┳━━━┳━━━━━━━┓\n");
+    printf("┏━┳━┳━┳━┓\n");
     printf("┃*order┃weight┃      ┃  哈夫曼编码  ┃\n");
     for (i = 1; i <= HT[0].weight; i++)
         printf("┃  %2d  ┃ %4d ┃──→  %-14s┃\n", i, HT[i].weight, HC[i]);
-    printf("┗━━━┻━━━┻━━━┻━━━┻━━━┛\n");
+    printf("┗━┻━┻━┻━┻━┛\n");
 }
 
 #endif //DATA_STRUCTURE_HUFFMANTREE_H

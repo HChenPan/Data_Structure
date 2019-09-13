@@ -13,15 +13,15 @@
 #include <stdlib.h>                                        //提供malloc、realloc、free、exit原型
 #include "../04 SinglyLinkedList/SinglyLinkedList.h"    //**▲02 线性表**//
 /* 单链表归并函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法2.12：C=A+B，且保持元素相对位置不变。   ┃
-┃    Lc利用La的头结点，Lb中结点均插入新链表Lc中。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法2.12：C=A+B，且保持元素相对位置不变。   ┃
+┃    Lc利用La的头结点，Lb中结点均插入新链表Lc中。
+**/
 void MergeList_L(LinkList La, LinkList *Lb, LinkList *Lc);
 
-/*═════╗
-║ 算法2.12 ║ 
-╚═════*/
+/**
+ 算法2.12  
+**/
 void
 MergeList_L(LinkList La, LinkList *Lb, LinkList *Lc) {                                        //指针Lb,Lc要改变，故形参是指向指针的指针 
     LinkList pa, pb, pc;

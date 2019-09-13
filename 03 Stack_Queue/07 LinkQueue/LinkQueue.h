@@ -33,49 +33,49 @@ typedef struct {
 } LinkQueue;                            //队列的链式存储表示
 
 /* 链栈函数列表 */
-/*━━━━━━━━━┓
-┃(01)初始化链队Q。 ┃
-┗━━━━━━━━━*/
+/**
+(01)初始化链队Q。 
+**/
 Status InitQueue_L(LinkQueue *Q);
 
-/*━━━━━━┓
-┃(02)置空Q。 ┃
-┗━━━━━━*/
+/**
+(02)置空Q。 
+**/
 void ClearQueue_L(LinkQueue *Q);
 
-/*━━━━━━┓
-┃(03)销毁Q。 ┃
-┗━━━━━━*/
+/**
+(03)销毁Q。 
+**/
 void DestroyQueue_L(LinkQueue *Q);
 
-/*━━━━━━━━━━┓
-┃(04)判断Q是否为空。 ┃
-┗━━━━━━━━━━*/
+/**
+(04)判断Q是否为空。 
+**/
 Status QueueEmpty_L(LinkQueue Q);
 
-/*━━━━━━━━━━┓
-┃(05)返回Q元素个数。 ┃
-┗━━━━━━━━━━*/
+/**
+(05)返回Q元素个数。 
+**/
 int QueueLength_L(LinkQueue Q);
 
-/*━━━━━━━━━━━┓
-┃(06)用e获取队头元素。 ┃
-┗━━━━━━━━━━━*/
+/**
+(06)用e获取队头元素。 
+**/
 Status GetHead_L(LinkQueue Q, QElemType_L *e);
 
-/*━━━━━━━━┓
-┃(07)元素e入队。 ┃
-┗━━━━━━━━*/
+/**
+(07)元素e入队。 
+**/
 Status EnQueue_L(LinkQueue *Q, QElemType_L e);
 
-/*━━━━━━━━┓
-┃(08)元素e出队。 ┃
-┗━━━━━━━━*/
+/**
+(08)元素e出队。 
+**/
 Status DeQueue_L(LinkQueue *Q, QElemType_L *e);
 
-/*━━━━━━━┓
-┃(09)访问队列。┃
-┗━━━━━━━*/
+/**
+(09)访问队列。
+**/
 void QueueTraverse_L(LinkQueue Q, void(Visit)(QElemType_L));
 
 

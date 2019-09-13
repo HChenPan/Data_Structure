@@ -38,139 +38,139 @@ typedef struct {
 } Node;
 
 /* 二叉树（二叉链表存储）函数列 表 */
-/*━━━━━━━━━━━━━━━━━┓
-┃(01)构造空二叉树T (初始化二叉树)。┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(01)构造空二叉树T (初始化二叉树)。
+**/
 void InitBiTree(BiTree *T);
 
-/*━━━━━━━━━┓
-┃(02)清空二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(02)清空二叉树T。 
+**/
 void ClearBiTree(BiTree *T);
 
-/*━━━━━━━━━┓
-┃(03)销毁二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(03)销毁二叉树T。 
+**/
 void DestroyBiTree(BiTree *T);
 
-/*━━━━━━━━━━━━━┓
-┃(04)判断二叉树T是否为空。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(04)判断二叉树T是否为空。 
+**/
 Status BiTreeEmpty(BiTree T);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(05)算法6.4：按先序序列构造二叉树。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(05)算法6.4：按先序序列构造二叉树。 
+**/
 Status CreateBiTree(FILE *fp, BiTree *T);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(06)返回二叉树长度（按完全二叉树计算）。┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(06)返回二叉树长度（按完全二叉树计算）。
+**/
 int BiTreeLength(BiTree T);
 
-/*━━━━━━━━━━━━━━┓
-┃(07)返回二叉树深度（层数）。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(07)返回二叉树深度（层数）。
+**/
 int BiTreeDepth(BiTree T);
 
-/*━━━━━━━━━━━━━━━┓
-┃(08)用e返回二叉树的根结点值。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(08)用e返回二叉树的根结点值。 
+**/
 Status Root(BiTree T, TElemType *e);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(09)返回某结点的值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(09)返回某结点的值，p为结点指针。 
+**/
 TElemType Value(BiTree p);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(10)为某结点赋值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(10)为某结点赋值，p为结点指针。 
+**/
 void Assign(BiTree p, TElemType value);
 
-/*━━━━━━━━━━━━━━┓
-┃(11)返回某结点的双亲结点值。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(11)返回某结点的双亲结点值。
+**/
 TElemType Parent(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(12)返回某结点的左孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(12)返回某结点的左孩子结点值。
+**/
 TElemType LeftChild(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(13)返回某结点的右孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(13)返回某结点的右孩子结点值。
+**/
 TElemType RightChild(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(14)返回某结点的左兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(14)返回某结点的左兄弟结点值。
+**/
 TElemType LeftSibling(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(15)返回某结点的右兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(15)返回某结点的右兄弟结点值。
+**/
 TElemType RightSibling(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━┓
-┃(16-1)获取指向结点e的指针。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(16-1)获取指向结点e的指针。 
+**/
 BiTree LocationBiTree_1(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━┓
-┃(16-2)获取指向结点e的指针。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(16-2)获取指向结点e的指针。 
+**/
 BiTree LocationBiTree_2(BiTree T, TElemType e);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(17)将树T0插入到树T中成为结点e的子树，LR为插入标记，T0只有左子树。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(17)将树T0插入到树T中成为结点e的子树，LR为插入标记，T0只有左子树。
+**/
 Status InsertBiTree(BiTree T, TElemType e, BiTree T0, int LR);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(18)删除e结点的左子树或右子树，LR为删除标记。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(18)删除e结点的左子树或右子树，LR为删除标记。 
+**/
 Status DeleteBiTree(BiTree T, TElemType e, int LR);
 
-/*━━━━━━━━━━┓
-┃(19)层序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(19)层序遍历二叉树。
+**/
 void LevelOrderTraverse(BiTree T, void(Visit)(TElemType));
 
-/*━━━━━━━━━━━┓
-┃(20-1)先序遍历二叉树。┃
-┗━━━━━━━━━━━*/
+/**
+(20-1)先序遍历二叉树。
+**/
 void PreOrderTraverse_1(BiTree T, void(Visit)(TElemType));
 
-/*━━━━━━━━━━━━━━━━┓
-┃(20-2)算法6.1：先序遍历二叉树。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(20-2)算法6.1：先序遍历二叉树。 
+**/
 Status PreOrderTraverse_2(BiTree T, Status(Visit)(TElemType));
 
-/*━━━━━━━━━━━┓
-┃(21-1)中序遍历二叉树。┃
-┗━━━━━━━━━━━*/
+/**
+(21-1)中序遍历二叉树。
+**/
 void InOrderTraverse_1(BiTree T, void(Visit)(TElemType));
 
-/*━━━━━━━━━━━━━━━━┓
-┃(21-2)算法6.2：中序遍历二叉树。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(21-2)算法6.2：中序遍历二叉树。 
+**/
 Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType));
 
-/*━━━━━━━━━━━━━━━━┓
-┃(21-3)算法6.3：中序遍历二叉树。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(21-3)算法6.3：中序遍历二叉树。 
+**/
 Status InOrderTraverse_3(BiTree T, Status(Visit)(TElemType));
 
-/*━━━━━━━━━━┓
-┃(22)后序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(22)后序遍历二叉树。
+**/
 void PostOrderTraverse(BiTree T, void(Visit)(TElemType));
 
-/*━━━━━━━━━━━━━┓
-┃(23)按二叉树的结构打印树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(23)按二叉树的结构打印树。
+**/
 void PrintTree(BiTree T);
 
 void InitBiTree(BiTree *T) {
@@ -199,9 +199,9 @@ Status BiTreeEmpty(BiTree T) {
     return T == NULL ? TRUE : ERROR;
 }
 
-/*════╗
-║ 算法6.4║
-╚════*/
+/**
+ 算法6.4
+**/
 Status CreateBiTree(FILE *fp, BiTree *T) {
     char ch;
 
@@ -603,9 +603,9 @@ void PreOrderTraverse_1(BiTree T, void(Visit)(TElemType)) {
     }
 }
 
-/*════╗
-║ 算法6.1║
-╚════*/
+/**
+ 算法6.1
+**/
 Status PreOrderTraverse_2(BiTree T, Status(Visit)(TElemType)) {
     if (T) {
         if (Visit(T->data)) {
@@ -625,9 +625,9 @@ void InOrderTraverse_1(BiTree T, void(Visit)(TElemType)) {
     }
 }
 
-/*════╗
-║ 算法6.2║
-╚════*/
+/**
+ 算法6.2
+**/
 Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType)) {
     SqStack S;
     SElemType_Sq p;
@@ -652,9 +652,9 @@ Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType)) {
     return OK;
 }
 
-/*════╗
-║ 算法6.3║
-╚════*/
+/**
+ 算法6.3
+**/
 Status InOrderTraverse_3(BiTree T, Status(Visit)(TElemType)) {
     SqStack S;
     SElemType_Sq p;

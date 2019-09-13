@@ -13,9 +13,9 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 2-路插入排序函数列表 */
-/*━━━━━━━━━━━━━━━┓
-┃(01)对顺序表L作2-路插入排序。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(01)对顺序表L作2-路插入排序。 
+**/
 void TwoTayInsertSort(SqList_sort *L);
 
 void TwoTayInsertSort(SqList_sort *L) {

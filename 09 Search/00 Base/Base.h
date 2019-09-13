@@ -29,24 +29,24 @@ typedef struct {
 } Table;                            //查找表
 
 /* 函数列表 */
-/*━━━━━━━┓
-┃(01)创建查找表┃
-┗━━━━━━━*/
+/**
+(01)创建查找表
+**/
 Status Create(FILE *fp, Table *T, int n);
 
-/*━━━━━━━┓
-┃(02)销毁查找表┃
-┗━━━━━━━*/
+/**
+(02)销毁查找表
+**/
 void Destory(Table *T);
 
-/*━━━━━━━┓
-┃(03)遍历查找表┃
-┗━━━━━━━*/
+/**
+(03)遍历查找表
+**/
 void Traverse(Table T, void(Visit)(ElemType_Search));
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(04)输出查找表中的关键字（只输出key域） ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)输出查找表中的关键字（只输出key域） 
+**/
 void PrintKey(ElemType_Search e);
 
 

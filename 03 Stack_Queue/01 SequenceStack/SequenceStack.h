@@ -34,49 +34,49 @@ typedef struct {
 } SqStack;
 
 /* 顺序栈函数列表 */
-/*━━━━━━━━┓
-┃(01)构造空栈S。 ┃
-┗━━━━━━━━*/
+/**
+(01)构造空栈S。 
+**/
 Status InitStack_Sq(SqStack *S);
 
-/*━━━━━━┓
-┃(02)销毁S。 ┃
-┗━━━━━━*/
+/**
+(02)销毁S。 
+**/
 Status DestroyStack_Sq(SqStack *S);
 
-/*━━━━━━┓
-┃(03)置空S。 ┃
-┗━━━━━━*/
+/**
+(03)置空S。 
+**/
 Status ClearStack_Sq(SqStack *S);
 
-/*━━━━━━━━━━┓
-┃(04)判断S是否为空。 ┃
-┗━━━━━━━━━━*/
+/**
+(04)判断S是否为空。 
+**/
 Status StackEmpty_Sq(SqStack S);
 
-/*━━━━━━━━━━┓
-┃(05)返回S元素个数。 ┃
-┗━━━━━━━━━━*/
+/**
+(05)返回S元素个数。 
+**/
 int StackLength_Sq(SqStack S);
 
-/*━━━━━━━━━━━┓
-┃(06)用e获取栈顶元素。 ┃
-┗━━━━━━━━━━━*/
+/**
+(06)用e获取栈顶元素。 
+**/
 Status GetTop_Sq(SqStack S, SElemType_Sq *e);
 
-/*━━━━━━━━┓
-┃(07)元素e进栈。 ┃
-┗━━━━━━━━*/
+/**
+(07)元素e进栈。 
+**/
 Status Push_Sq(SqStack *S, SElemType_Sq e);
 
-/*━━━━━━━━┓
-┃(08)元素e出栈。 ┃
-┗━━━━━━━━*/
+/**
+(08)元素e出栈。 
+**/
 Status Pop_Sq(SqStack *S, SElemType_Sq *e);
 
-/*━━━━━━┓
-┃(09)访问栈。┃
-┗━━━━━━*/
+/**
+(09)访问栈。
+**/
 Status StackTraverse_Sq(SqStack S, void(Visit)(SElemType_Sq));
 
 

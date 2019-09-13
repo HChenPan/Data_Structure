@@ -19,35 +19,35 @@ typedef char SElemType_Sq;
 typedef SElemType_Sq OperandType;				//操作数类型
 typedef SElemType_Sq OperatorType;				//运算符类型
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法3.4：表达式求值，假设表达式中操作数均只有一位。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法3.4：表达式求值，假设表达式中操作数均只有一位。 
+**/
 OperandType EvaluateExpression(char exp[]);
 
-/*━━━━━━━━━━━━━━┓
-┃(02)获取操作符栈的栈顶元素。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(02)获取操作符栈的栈顶元素。
+**/
 OperatorType GetTop_OPTR(SqStack OPTR);
 
-/*━━━━━━━━━━━━━━┓
-┃(03)判断c是否属于操作符集。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(03)判断c是否属于操作符集。 
+**/
 Status In(SElemType_Sq c);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)判断栈中操作符o1与表达式中的操作符o2的优先级。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)判断栈中操作符o1与表达式中的操作符o2的优先级。
+**/
 OperatorType Precede(OperatorType o1, OperatorType o2);
 
-/*━━━━━━━━━━┓
-┃(05)计算表达式的值。┃
-┗━━━━━━━━━━*/
+/**
+(05)计算表达式的值。
+**/
 OperandType Operate(OperandType a, OperatorType theta, OperandType b);
 
 
-/*════╗
-║ 算法3.4║
-╚════*/
+/**
+ 算法3.4
+**/
 OperandType EvaluateExpression(char exp[])	//从exp读入表达式
 {
     SqStack OPTR, OPND;						//符号栈和数字栈

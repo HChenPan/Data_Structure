@@ -30,49 +30,49 @@ typedef struct {
 } TSMatrix;
 
 /* 三元组顺序表（稀疏矩阵）函数列表 */
-/*━━━━━━━━━┓
-┃(01)创建n个矩阵。 ┃
-┗━━━━━━━━━*/
+/**
+(01)创建n个矩阵。 
+**/
 Status CreateSMatrix_T(FILE *fp, int n, ...);
 
-/*━━━━━━━┓
-┃(02)销毁矩阵。┃
-┗━━━━━━━*/
+/**
+(02)销毁矩阵。
+**/
 void DestroySMatrix_T(TSMatrix *M);
 
-/*━━━━━━━┓
-┃(03)输出矩阵。┃
-┗━━━━━━━*/
+/**
+(03)输出矩阵。
+**/
 void PrintSMatrix_T(TSMatrix M);
 
-/*━━━━━━━━┓
-┃(04)矩阵的复制。┃
-┗━━━━━━━━*/
+/**
+(04)矩阵的复制。
+**/
 void CopySMatrix_T(TSMatrix M, TSMatrix *T);
 
-/*━━━━━━━━┓
-┃(05)Q = M + N。 ┃
-┗━━━━━━━━*/
+/**
+(05)Q = M + N。 
+**/
 Status AddSMatri_T(TSMatrix M, TSMatrix N, TSMatrix *Q);
 
-/*━━━━━━━━┓
-┃(06)Q = M - N。 ┃
-┗━━━━━━━━*/
+/**
+(06)Q = M - N。 
+**/
 Status SubSMatrix_T(TSMatrix M, TSMatrix N, TSMatrix *Q);
 
-/*━━━━━━━━┓
-┃(07)Q = M * N。 ┃
-┗━━━━━━━━*/
+/**
+(07)Q = M * N。 
+**/
 Status MultSMatrix_T(TSMatrix M, TSMatrix N, TSMatrix *Q);
 
-/*━━━━━━━━━━━━┓
-┃(08)算法5.1：矩阵转置。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(08)算法5.1：矩阵转置。 
+**/
 void TransposeSMatrix_T(TSMatrix M, TSMatrix *T);
 
-/*━━━━━━━━━━━━━━┓
-┃(09)算法5.2：矩阵快速转置。 ┃
-┗━━━━━━━━━━━━━━*/
+/**
+(09)算法5.2：矩阵快速转置。 
+**/
 void FastTransposeSMatrix_T(TSMatrix M, TSMatrix *T);
 
 
@@ -319,9 +319,9 @@ Status MultSMatrix_T(TSMatrix M, TSMatrix N, TSMatrix *Q) {
     return OK;
 }
 
-/*════╗
-║ 算法5.1║
-╚════*/
+/**
+ 算法5.1
+**/
 void TransposeSMatrix_T(TSMatrix M, TSMatrix *T) {
     int p, q, col;
 
@@ -346,9 +346,9 @@ void TransposeSMatrix_T(TSMatrix M, TSMatrix *T) {
     }
 }
 
-/*════╗
-║ 算法5.2║
-╚════*/
+/**
+ 算法5.2
+**/
 void FastTransposeSMatrix_T(TSMatrix M, TSMatrix *T) {
     int col, t, p, q;
     int num[M.nu];                            //num[col]表示M第col列中非零元的个数

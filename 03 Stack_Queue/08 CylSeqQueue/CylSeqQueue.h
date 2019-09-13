@@ -27,49 +27,49 @@ typedef struct							//队列的顺序存储结构
 }CSqQueue;
 
 /* 循环队列函数列表 */
-/*━━━━━━━━━━━┓
-┃(01)初始化循环队列Q。 ┃
-┗━━━━━━━━━━━*/
+/**
+(01)初始化循环队列Q。 
+**/
 Status InitQueue_CSq(CSqQueue *Q);
 
-/*━━━━━━┓
-┃(02)置空Q。 ┃
-┗━━━━━━*/
+/**
+(02)置空Q。 
+**/
 void ClearQueue_CSq(CSqQueue *Q);
 
-/*━━━━━━┓
-┃(03)销毁Q。 ┃
-┗━━━━━━*/
+/**
+(03)销毁Q。 
+**/
 void DestroyQueue_CSq(CSqQueue *Q);
 
-/*━━━━━━━━━━┓
-┃(04)判断Q是否为空。 ┃
-┗━━━━━━━━━━*/
+/**
+(04)判断Q是否为空。 
+**/
 Status QueueEmpty_CSq(CSqQueue Q);
 
-/*━━━━━━━━━━┓
-┃(05)返回Q元素个数。 ┃
-┗━━━━━━━━━━*/
+/**
+(05)返回Q元素个数。 
+**/
 int QueueLength_CSq(CSqQueue Q);
 
-/*━━━━━━━━━━━┓
-┃(06)用e获取队头元素。 ┃
-┗━━━━━━━━━━━*/
+/**
+(06)用e获取队头元素。 
+**/
 Status GetHead_CSq(CSqQueue Q, QElemType_CSq *e);
 
-/*━━━━━━━━┓
-┃(07)元素e入队。 ┃
-┗━━━━━━━━*/
+/**
+(07)元素e入队。 
+**/
 Status EnQueue_CSq(CSqQueue *Q, QElemType_CSq e);
 
-/*━━━━━━━━┓
-┃(08)元素e出队。 ┃
-┗━━━━━━━━*/
+/**
+(08)元素e出队。 
+**/
 Status DeQueue_CSq(CSqQueue *Q, QElemType_CSq *e);
 
-/*━━━━━━━┓
-┃(09)访问队列。┃
-┗━━━━━━━*/
+/**
+(09)访问队列。
+**/
 void QueueTraverse_CSq(CSqQueue Q, void(Visit)(QElemType_CSq));
 
 

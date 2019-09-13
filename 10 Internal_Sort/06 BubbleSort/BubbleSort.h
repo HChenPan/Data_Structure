@@ -13,9 +13,9 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 起泡排序函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)对顺序表L作起泡排序。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)对顺序表L作起泡排序。 
+**/
 void BubbleSort(SqList_sort *L);
 
 void BubbleSort(SqList_sort *L) {

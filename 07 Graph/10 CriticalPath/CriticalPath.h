@@ -21,25 +21,25 @@ int ve[MAX_VERTEX_NUM + 1];                                        //各事件�
 int vl[MAX_VERTEX_NUM + 1];                                        //各事件（顶点）的最迟发生时间
 
 /* AOE-网关键路径函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法7.13：求有向网拓扑排序，并求各事件最早发生时间。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法7.13：求有向网拓扑排序，并求各事件最早发生时间。
+**/
 Status TopologicalOrder(ALGraph G, SqStack *T);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(02)算法7.14：求有向网关键活动。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(02)算法7.14：求有向网关键活动。
+**/
 Status CriticalPath(ALGraph G);
 
-/*━━━━━━━━━━━━━┓
-┃(03)对有向图各顶点求入度。┃
-┗━━━━━━━━━━━━━*/
+/**
+(03)对有向图各顶点求入度。
+**/
 void FindInDegree(ALGraph G, int indegree[MAX_VERTEX_NUM + 1]);
 
 
-/*════╗
-║算法7.13║
-╚════*/
+/**
+算法7.13
+**/
 Status TopologicalOrder(ALGraph G, SqStack *T) {
     SqStack S;
     ArcNode *p;
@@ -81,9 +81,9 @@ Status TopologicalOrder(ALGraph G, SqStack *T) {
         return OK;
 }
 
-/*════╗
-║算法7.14║
-╚════*/
+/**
+算法7.14
+**/
 Status CriticalPath(ALGraph G) {
     int i, j, k;
     ArcNode *p;

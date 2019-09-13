@@ -50,39 +50,39 @@ typedef struct TrieNode                            //Trie树存储表示
 typedef TrieNode *TrieTree;                        //指向Trie树结点的指针
 
 /* Trie树函数列表 */
-/*━━━━━━━┓
-┃(01)创建Trie树┃
-┗━━━━━━━*/
+/**
+(01)创建Trie树
+**/
 Status CreateTrie(FILE *fp, TrieTree *TT);
 
-/*━━━━━━━━━┓
-┃(02)算法9.16：查找┃
-┗━━━━━━━━━*/
+/**
+(02)算法9.16：查找
+**/
 Record *SearchTrie(TrieTree TT, KeysType K);
 
-/*━━━━━━┓
-┃(03)插入记录┃
-┗━━━━━━*/
+/**
+(03)插入记录
+**/
 Status InsertTrie(TrieTree *TT, Record R);
 
-/*━━━━━━━━━━━━━┓
-┃(04)删除含有关键字K的记录 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(04)删除含有关键字K的记录 
+**/
 Status DeleteTrie(TrieTree *TT, KeysType K);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(05)返回字符ch在Trie树结点中的位序┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(05)返回字符ch在Trie树结点中的位序
+**/
 int ord(char ch);
 
-/*━━━━━━━━━━━━┓
-┃(06)判断结构A与B是否相等┃
-┗━━━━━━━━━━━━*/
+/**
+(06)判断结构A与B是否相等
+**/
 Status cmp(KeysType A, KeysType B);
 
-/*━━━━━━━┓
-┃(07)遍历Trie树┃
-┗━━━━━━━*/
+/**
+(07)遍历Trie树
+**/
 void TraverseTrie(TrieTree TT, void(Visit)(Record *));
 
 Status CreateTrie(FILE *fp, TrieTree *TT) {
@@ -98,9 +98,9 @@ Status CreateTrie(FILE *fp, TrieTree *TT) {
     return OK;
 }
 
-/*════╗
-║算法9.16║
-╚════*/
+/**
+算法9.16
+**/
 Record *SearchTrie(TrieTree TT, KeysType K) {
     TrieTree p;
     int i;

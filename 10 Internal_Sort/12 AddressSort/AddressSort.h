@@ -14,14 +14,14 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 顺序表地址排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)对顺序表L按关键字大小进行地址排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)对顺序表L按关键字大小进行地址排序。 
+**/
 void AddressSort(SqList_sort *L);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法10.18：根据各记录地址，对L中的记录重新排序。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法10.18：根据各记录地址，对L中的记录重新排序。
+**/
 void Rearrange(SqList_sort *L, int adr[]);
 
 void AddressSort(SqList_sort *L) {
@@ -53,9 +53,9 @@ void AddressSort(SqList_sort *L) {
     Rearrange(L, adr);
 }
 
-/*═════╗
-║ 算法10.18║
-╚═════*/
+/**
+ 算法10.18
+**/
 void Rearrange(SqList_sort *L, int adr[]) {
     int i, j, k;
 

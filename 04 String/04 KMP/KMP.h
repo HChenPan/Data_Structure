@@ -14,24 +14,24 @@
 #include "../01 SequenceString/SequenceString.h"            //**▲04 串**//
 
 /* KMP算法函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(1)算法4.6：KMP匹配算法。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(1)算法4.6：KMP匹配算法。 
+**/
 int Index_KMP(SString S, SString T, int pos, int next[]);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(2)算法4.7：求next函数值的算法。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(2)算法4.7：求next函数值的算法。
+**/
 void get_next(SString T, int next[]);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(3)算法4.8：改进后的求next函数值的算法。┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(3)算法4.8：改进后的求next函数值的算法。
+**/
 void get_nextval(SString T, int nextval[]);
 
-/*════╗
-║ 算法4.6║
-╚════*/
+/**
+ 算法4.6
+**/
 int Index_KMP(SString S, SString T, int pos, int next[]) {
     int i = pos;
     int j = 1;
@@ -53,9 +53,9 @@ int Index_KMP(SString S, SString T, int pos, int next[]) {
         return 0;
 }
 
-/*════╗
-║ 算法4.7║
-╚════*/
+/**
+ 算法4.7
+**/
 void get_next(SString T, int next[]) {
     int i = 1;
     int j = 0;
@@ -72,9 +72,9 @@ void get_next(SString T, int next[]) {
     }
 }
 
-/*════╗
-║ 算法4.8║
-╚════*/
+/**
+ 算法4.8
+**/
 void get_nextval(SString T, int nextval[]) {
     int i = 1;
     int j = 0;

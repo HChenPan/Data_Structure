@@ -37,7 +37,7 @@ int Scanf(FILE *fp, char *format, ...) {
         }
         if (format[k - 1] == 'c') {
             //读取字符
-            ch = va_arg(ap, char * );
+            ch = va_arg(ap, char *);
             if (tmp != EOF) {
                 count += fscanf(fp, "%c", ch);
             }
@@ -45,7 +45,7 @@ int Scanf(FILE *fp, char *format, ...) {
 
         if (format[k - 1] == 'd') {
             //读取整型
-            i = va_arg(ap, int * );
+            i = va_arg(ap, int *);
             while ((tmp = getc(fp)) != EOF) {
                 if ((tmp >= '0' && tmp <= '9') || tmp == '-' || tmp == '+') {
                     ungetc(tmp, fp);
@@ -60,7 +60,7 @@ int Scanf(FILE *fp, char *format, ...) {
 
         if (format[k - 1] == 'f') {
             //读取浮点型
-            f = va_arg(ap, float * );
+            f = va_arg(ap, float *);
             while ((tmp = getc(fp)) != EOF) {
                 if ((tmp >= '0' && tmp <= '9') || tmp == '-' || tmp == '+' || tmp == '.') {
                     ungetc(tmp, fp);
@@ -73,7 +73,7 @@ int Scanf(FILE *fp, char *format, ...) {
         }
         if (format[k - 1] == 's') {
             //读取字符串
-            s = va_arg(ap, char * );
+            s = va_arg(ap, char *);
             while ((tmp = getc(fp)) != EOF && (!isprint(tmp) || tmp == ' '));
             n = 0;
             if (!feof(fp)) {

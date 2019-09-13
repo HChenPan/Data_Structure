@@ -47,66 +47,66 @@ WordListType gWordList = {{"a", "an", "the", "of", "and", "is", "to", "as", "in"
 WordListType gWdList;                    //关键词词表(普通词表)
 
 /* 创建索引表函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法4.9：读取书目文件，并创建相应的关键词索引表到另一文件。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法4.9：读取书目文件，并创建相应的关键词索引表到另一文件。 
+**/
 void Main(char *bookinfo, char *bookidx);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法4.10：初始化索引表，且在idxlist.item[0]设置一表头。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法4.10：初始化索引表，且在idxlist.item[0]设置一表头。 
+**/
 void InitIdxList(IdxListType *idxlist);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)从文件f中读取一条书目信息存入书目缓冲区gBuf。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)从文件f中读取一条书目信息存入书目缓冲区gBuf。 
+**/
 void GetLine(FILE *f);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)从gBuf中提取书名关键词到词表gWdList，书号存入bno。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)从gBuf中提取书名关键词到词表gWdList，书号存入bno。
+**/
 void ExtractKeyWord(int *bno);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(05)将书号bno对应的书名关键词按词典顺序插入索引表idxlist。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(05)将书号bno对应的书名关键词按词典顺序插入索引表idxlist。
+**/
 Status InsIdxList(IdxListType *idxlist, int bno);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(06)将生成的索引表idxlist输出到文件g。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(06)将生成的索引表idxlist输出到文件g。
+**/
 void PutText(FILE *g, IdxListType idxlist);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(07)算法4.11：用wd返回词表gWdList中第i个关键词。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)算法4.11：用wd返回词表gWdList中第i个关键词。
+**/
 void GetWord(int i, HString *wd);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(08)算法4.12：查询在索引表idxlist中是否存在与wd相等的关键词。                       ┃
-┃	  若存在，则返回wd在词表中的位置并置b为TRUE，否则返回wd应插入的位置并置b为FALSE。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(08)算法4.12：查询在索引表idxlist中是否存在与wd相等的关键词。                       ┃
+┃	  若存在，则返回wd在词表中的位置并置b为TRUE，否则返回wd应插入的位置并置b为FALSE。 
+**/
 int Locate(IdxListType idxlist, HString wd, Bool *b);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(09)算法4.13：在索引表第i项上插入关键词wd，并初始化书号索引的链表为空表。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(09)算法4.13：在索引表第i项上插入关键词wd，并初始化书号索引的链表为空表。 
+**/
 void InsertNewKey(IdxListType *idxlist, int i, HString wd);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(10)算法4.14：在索引表的第i项中插入书号为bno的索引。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(10)算法4.14：在索引表的第i项中插入书号为bno的索引。
+**/
 Status InsertBook(IdxListType *idxlist, int i, int bno);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(11)判断S包含的关键词是否为常用词。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(11)判断S包含的关键词是否为常用词。 
+**/
 Status isCommonWords(HString S);
 
 
-/*════╗
-║ 算法4.9║
-╚════*/
+/**
+ 算法4.9
+**/
 void Main(char *bookinfo, char *bookidx) {
     FILE *f, *g;
     char b[MaxLineLen];                        //书目临时缓存区
@@ -178,9 +178,9 @@ void ExtractKeyWord(int *bno) {
     }
 }
 
-/*═════╗
-║ 算法4.10 ║
-╚═════*/
+/**
+ 算法4.10 
+**/
 Status InsIdxList(IdxListType *idxlist, int bno) {
     int i, j;
     Bool boo;
@@ -237,18 +237,18 @@ void PutText(FILE *g, IdxListType idxlist) {
 
 }
 
-/*═════╗
-║ 算法4.11 ║
-╚═════*/
+/**
+ 算法4.11 
+**/
 void GetWord(int i, HString *wd) {
     char *p = gWdList.str[i];
 
     StrAssign_H(wd, p);
 }
 
-/*═════╗
-║ 算法4.12 ║
-╚═════*/
+/**
+ 算法4.12 
+**/
 int Locate(IdxListType idxlist, HString wd, Bool *b) {
     int i, m;
 
@@ -263,9 +263,9 @@ int Locate(IdxListType idxlist, HString wd, Bool *b) {
     }
 }
 
-/*═════╗
-║ 算法4.13 ║
-╚═════*/
+/**
+ 算法4.13 
+**/
 void InsertNewKey(IdxListType *idxlist, int i, HString wd) {
     int j;
 
@@ -279,9 +279,9 @@ void InsertNewKey(IdxListType *idxlist, int i, HString wd) {
     InitList_E(&((*idxlist).item[i].bnolist));
 }
 
-/*═════╗
-║ 算法4.14 ║
-╚═════*/
+/**
+ 算法4.14 
+**/
 Status InsertBook(IdxListType *idxlist, int i, LElemType_E bno) {
     Link p;
 

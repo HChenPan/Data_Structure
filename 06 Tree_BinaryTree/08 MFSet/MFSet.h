@@ -33,54 +33,54 @@ typedef struct {
 } Relation;
 
 /* 并查集（等价类）函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)构造一个由n个子集（每个子集只包含单个成员）构成的集合S。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)构造一个由n个子集（每个子集只包含单个成员）构成的集合S。
+**/
 void Initial_mfset(FILE *fp, MFSet *S);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法6.8：查找集合S中i所在子集的根。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法6.8：查找集合S中i所在子集的根。 
+**/
 int find_mfset(MFSet S, int i);
 
-/*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法6.9：求Si和Sj的并集，Si和Sj无交集。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法6.9：求Si和Sj的并集，Si和Sj无交集。 
+**/
 Status merge_mfset(MFSet *S, int i, int j);
 
-/*━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)算法6.10：集合归并函数，算法6.9改进。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法6.10：集合归并函数，算法6.9改进。 
+**/
 Status mix_mfset(MFSet *S, int i, int j);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(05)算法6.11：查找集合S中i所在子集的根, 算法6.8改进。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(05)算法6.11：查找集合S中i所在子集的根, 算法6.8改进。 
+**/
 int fix_mfset(MFSet *S, int i);
 
-/*━━━━━━━━━━━┓
-┃(06)建立二元等价关系。┃
-┗━━━━━━━━━━━*/
+/**
+(06)建立二元等价关系。
+**/
 Status BuildRelation_mfset(FILE *fp, Relation *R);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(07-1)求在等价关系R下集合S的等价类。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(07-1)求在等价关系R下集合S的等价类。
+**/
 int EquivalenceClass_mfset_1(MFSet *S, Relation R);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(07-2)求在等价关系R下集合S的等价类。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(07-2)求在等价关系R下集合S的等价类。
+**/
 int EquivalenceClass_mfset_2(MFSet *S, Relation R);
 
-/*━━━━━━━━━━━━━━━┓
-┃(08)返回集合S中非空子集数目。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(08)返回集合S中非空子集数目。 
+**/
 int SubsetCount_mfset(MFSet S);
 
-/*━━━━━━━━┓
-┃(09)展示集合S。 ┃
-┗━━━━━━━━*/
+/**
+(09)展示集合S。 
+**/
 void ShowSet_mfset(MFSet S);
 
 void Initial_mfset(FILE *fp, MFSet *S) {
@@ -96,9 +96,9 @@ void Initial_mfset(FILE *fp, MFSet *S) {
     }
 }
 
-/*════╗
-║ 算法6.8║
-╚════*/
+/**
+ 算法6.8
+**/
 int find_mfset(MFSet S, int i) {
     int j;
 
@@ -110,9 +110,9 @@ int find_mfset(MFSet S, int i) {
     return j;
 }
 
-/*════╗
-║ 算法6.9║
-╚════*/
+/**
+ 算法6.9
+**/
 Status merge_mfset(MFSet *S, int i, int j) {
     if (i < 1 || j < 1 || i > S->n || j > S->n)
         return ERROR;
@@ -123,9 +123,9 @@ Status merge_mfset(MFSet *S, int i, int j) {
     return OK;
 }
 
-/*═════╗
-║ 算法6.10 ║
-╚═════*/
+/**
+ 算法6.10 
+**/
 Status mix_mfset(MFSet *S, int i, int j)        //令parent域存储子集中所含成员数目的负值
 {
     if (i < 1 || j < 1 || i > S->n || j > S->n)
@@ -144,9 +144,9 @@ Status mix_mfset(MFSet *S, int i, int j)        //令parent域存储子集中所
     return OK;
 }
 
-/*═════╗
-║ 算法6.11 ║
-╚═════*/
+/**
+ 算法6.11 
+**/
 int fix_mfset(MFSet *S, int i)                    //将i至根路径上所有结点压缩为根的孩子结点
 {
     int j, k, t;

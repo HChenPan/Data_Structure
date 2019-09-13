@@ -13,19 +13,19 @@
 #include "../00 SequenceListType/SequenceListType.h"//**10 Internal_Sort**//
 
 /* 简单选择排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法10.9：对顺序表L作简单选择排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法10.9：对顺序表L作简单选择排序。 
+**/
 void SelectSort(SqList_sort *L);
 
-/*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)在L.r[i..L.length]中选择key最小的记录。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)在L.r[i..L.length]中选择key最小的记录。 
+**/
 int SelectMinKey(SqList_sort L, int i);
 
-/*════╗
-║算法10.9║
-╚════*/
+/**
+算法10.9
+**/
 void SelectSort(SqList_sort *L) {
     int i, j;
     RcdType tmp;

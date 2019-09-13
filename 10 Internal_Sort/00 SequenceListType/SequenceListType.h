@@ -34,14 +34,14 @@ typedef struct {
 } SqList_sort;                            //顺序表类型
 
 /* 顺序表存储结构函数列表 */
-/*━━━━━━━━━━━━━━┓
-┃(01)创建一个任意顺序的序列。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(01)创建一个任意顺序的序列。
+**/
 Status CreateSortList(FILE *fp, SqList_sort *L);
 
-/*━━━━━━━━┓
-┃(02)输出序列L。 ┃
-┗━━━━━━━━*/
+/**
+(02)输出序列L。 
+**/
 void Traverse(SqList_sort L, void(Visit)(KeyType));
 
 Status CreateSortList(FILE *fp, SqList_sort *L) {

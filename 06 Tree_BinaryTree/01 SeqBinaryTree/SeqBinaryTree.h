@@ -29,109 +29,109 @@ typedef struct {
 } Position;
 
 /* 二叉树顺序存储结构函数列表 */
-/*━━━━━━━━━━┓
-┃(01)构造空二叉树T。 ┃
-┗━━━━━━━━━━*/
+/**
+(01)构造空二叉树T。 
+**/
 void InitBiTree_Sq(SqBiTree T);
 
-/*━━━━━━━━━┓
-┃(02)清空二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(02)清空二叉树T。 
+**/
 void ClearBiTree_Sq(SqBiTree T);
 
-/*━━━━━━━━━┓
-┃(03)销毁二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(03)销毁二叉树T。 
+**/
 void DestroyBiTree_Sq(SqBiTree T);
 
-/*━━━━━━━━━━━━━┓
-┃(04)判断二叉树T是否为空。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(04)判断二叉树T是否为空。 
+**/
 Status BiTreeEmpty_Sq(SqBiTree T);
 
-/*━━━━━━━━━━━━━┓
-┃(05)按层序序列构造二叉树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(05)按层序序列构造二叉树。
+**/
 Status CreateBiTree_Le_Sq(FILE *fp, SqBiTree T);
 
-/*━━━━━━━━━━━━━┓
-┃(06)按先序序列构造二叉树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(06)按先序序列构造二叉树。
+**/
 Status CreateBiTree_Pre_Sq(FILE *fp, SqBiTree T, int i);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(07)返回二叉树长度（按完全二叉树计算）。┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)返回二叉树长度（按完全二叉树计算）。
+**/
 int BiTreeLength_Sq(SqBiTree T);
 
-/*━━━━━━━━━━━━━━┓
-┃(08)返回二叉树深度（层数）。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(08)返回二叉树深度（层数）。
+**/
 int BiTreeDepth_Sq(SqBiTree T);
 
-/*━━━━━━━━━━━━┓
-┃(09)用e返回二叉树的根。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(09)用e返回二叉树的根。 
+**/
 Status Root_Sq(SqBiTree T, TElemType_Sq *e);
 
-/*━━━━━━━━━━━━━━┓
-┃(10)返回树中某位置的结点值。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(10)返回树中某位置的结点值。
+**/
 TElemType_Sq Value_Sq(SqBiTree T, Position s);
 
-/*━━━━━━━━━━━━━━┓
-┃(11)为树中某位置的结点赋值。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(11)为树中某位置的结点赋值。
+**/
 Status Assign_Sq(SqBiTree T, Position s, TElemType_Sq value);
 
-/*━━━━━━━━━━━━━━┓
-┃(12)返回某结点的双亲结点值。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(12)返回某结点的双亲结点值。
+**/
 TElemType_Sq Parent_Sq(SqBiTree T, TElemType_Sq e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(13)返回某结点的左孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(13)返回某结点的左孩子结点值。
+**/
 TElemType_Sq LeftChild_Sq(SqBiTree T, TElemType_Sq e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(14)返回某结点的右孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(14)返回某结点的右孩子结点值。
+**/
 TElemType_Sq RightChild_Sq(SqBiTree T, TElemType_Sq e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(15)返回某结点的左兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(15)返回某结点的左兄弟结点值。
+**/
 TElemType_Sq LeftSibling_Sq(SqBiTree T, TElemType_Sq e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(16)返回某结点的右兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(16)返回某结点的右兄弟结点值。
+**/
 TElemType_Sq RightSibling_Sq(SqBiTree T, TElemType_Sq e);
 
-/*━━━━━━━━━━┓
-┃(17)层序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(17)层序遍历二叉树。
+**/
 void LevelOrderTraverse_Sq(SqBiTree T, void(Visit)(TElemType_Sq));
 
-/*━━━━━━━━━━┓
-┃(18)前序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(18)前序遍历二叉树。
+**/
 void PreOrderTraverse_Sq(SqBiTree T, void(Visit)(TElemType_Sq), int i);
 
-/*━━━━━━━━━━┓
-┃(19)中序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(19)中序遍历二叉树。
+**/
 void InOrderTraverse_Sq(SqBiTree T, void(Visit)(TElemType_Sq), int i);
 
-/*━━━━━━━━━━┓
-┃(20)后序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(20)后序遍历二叉树。
+**/
 void PostOrderTraverse_Sq(SqBiTree T, void(Visit)(TElemType_Sq), int i);
 
-/*━━━━━━━━━━━━━┓
-┃(21)按二叉树的结构打印树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(21)按二叉树的结构打印树。
+**/
 void Print_Sq(SqBiTree T);
 
 void InitBiTree_Sq(SqBiTree T) {

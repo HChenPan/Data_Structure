@@ -37,14 +37,14 @@ typedef struct {
 } SLinkList_sort;                            //静态链表类型
 
 /* 静态链表存储结构函数列表 */
-/*━━━━━━━━━━━━━━┓
-┃(01)创建一个任意顺序的序列。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(01)创建一个任意顺序的序列。
+**/
 Status CreateSortList(FILE *fp, SLinkList_sort *L);
 
-/*━━━━━━━━┓
-┃(02)输出序列L。 ┃
-┗━━━━━━━━*/
+/**
+(02)输出序列L。 
+**/
 void Traverse(SLinkList_sort L, void(Visit)(KeyType));
 
 Status CreateSortList(FILE *fp, SLinkList_sort *L) {

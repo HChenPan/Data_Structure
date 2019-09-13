@@ -17,14 +17,14 @@
 #define LT(a, b) ((a) < (b))
 
 /* 折半查找函数列表 */
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法9.2：折半查找关键字key的位置。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法9.2：折半查找关键字key的位置。
+**/
 int Search_Bin(Table T, KeyType key);
 
-/*════╗
-║ 算法9.2║
-╚════*/
+/**
+ 算法9.2
+**/
 int Search_Bin(Table T, KeyType key) {
     int low, high, mid;
 

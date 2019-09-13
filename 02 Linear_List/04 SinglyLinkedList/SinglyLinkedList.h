@@ -30,74 +30,74 @@ typedef LNode *LinkList;        //指向单链表结点的指针
 
 
 /* 单链表（带头结点）函数列表 */
-/*━━━━━━━━━━┓
-┃(01)初始化单链表L。 ┃
-┗━━━━━━━━━━*/
+/**
+(01)初始化单链表L。 
+**/
 Status InitList_L(LinkList *L);
 
-/*━━━━━━━━━━━━━━━┓
-┃(02)置空单链表L，头结点保留。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(02)置空单链表L，头结点保留。 
+**/
 Status ClearList_L(LinkList L);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(03)销毁单链表L，连同通结点一起销毁。 ┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)销毁单链表L，连同通结点一起销毁。 
+**/
 void DestroyList_L(LinkList *L);
 
-/*━━━━━━━━━━━━━━━┓
-┃(04)判断单链表L是否为空。     ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(04)判断单链表L是否为空。     
+**/
 Status ListEmpty_L(LinkList L);
 
-/*━━━━━━━━━━━━┓
-┃(05)返回单链表L元素个数 ┃
-┗━━━━━━━━━━━━*/
+/**
+(05)返回单链表L元素个数 
+**/
 int ListLength_L(LinkList L);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(06)算法2.8：用e接收单链表L中第i个元素┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(06)算法2.8：用e接收单链表L中第i个元素
+**/
 Status GetElem_L(LinkList L, int i, LElemType_L *e);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(07)返回单链表L中第一个与e满足Compare关系的元素位序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)返回单链表L中第一个与e满足Compare关系的元素位序。 
+**/
 int LocateElem_L(LinkList L, LElemType_L e, Status(Compare)(LElemType_L, LElemType_L));
 
-/*━━━━━━━━━━━━━━┓
-┃(08)用pre_e接收cur_e的前驱。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(08)用pre_e接收cur_e的前驱。
+**/
 Status PriorElem_L(LinkList L, LElemType_L cur_e, LElemType_L *pre_e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(09)用next_e接收cur_e的后继。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(09)用next_e接收cur_e的后继。 
+**/
 Status NextElem_L(LinkList L, LElemType_L cur_e, LElemType_L *next_e);
 
-/*━━━━━━━━━━━━━━━━━━━━━┓
-┃(10)算法2.9：在单链表L第i个位置之前插入e。┃
-┗━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(10)算法2.9：在单链表L第i个位置之前插入e。
+**/
 Status ListInsert_L(LinkList L, int i, LElemType_L e);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(11)算法2.10：删除单链表L第i个位置的值，并用e接收。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(11)算法2.10：删除单链表L第i个位置的值，并用e接收。 
+**/
 Status ListDelete_L(LinkList L, int i, LElemType_L *e);
 
-/*━━━━━━━━━━━━━━┓
-┃(12)用Visit函数访问单链表L。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(12)用Visit函数访问单链表L。
+**/
 Status ListTraverse_L(LinkList L, void(Visit)(LElemType_L));
 
-/*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(13)算法2.11：头插法建立单链表L(逆序输入)。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(13)算法2.11：头插法建立单链表L(逆序输入)。 
+**/
 Status CreateList_HL(FILE *fp, LinkList *L, int n);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(14)尾插法建立单链表L(顺序输入)。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(14)尾插法建立单链表L(顺序输入)。 
+**/
 Status CreateList_TL(FILE *fp, LinkList *L, int n);
 
 
@@ -164,9 +164,9 @@ int ListLength_L(LinkList L) {
     return i;
 }
 
-/*════╗
-║ 算法2.8║ 
-╚════*/
+/**
+ 算法2.8 
+**/
 Status GetElem_L(LinkList L, int i, LElemType_L *e) {
     int j;
     LinkList p = L->next;
@@ -265,9 +265,9 @@ Status NextElem_L(LinkList L, LElemType_L cur_e, LElemType_L *next_e) {
 
 #endif
 
-/*════╗
-║ 算法2.9║ 
-╚════*/
+/**
+ 算法2.9 
+**/
 Status ListInsert_L(LinkList L, int i, LElemType_L e) {
     LinkList p, s;
     int j;
@@ -294,9 +294,9 @@ Status ListInsert_L(LinkList L, int i, LElemType_L e) {
     return OK;
 }
 
-/*═════╗
-║ 算法2.10 ║ 
-╚═════*/
+/**
+ 算法2.10  
+**/
 Status ListDelete_L(LinkList L, int i, LElemType_L *e) {
     LinkList pre, p;
     int j;
@@ -337,9 +337,9 @@ Status ListTraverse_L(LinkList L, void(Visit)(LElemType_L)) {
     return OK;
 }
 
-/*═════╗
-║ 算法2.11 ║ 
-╚═════*/
+/**
+ 算法2.11  
+**/
 Status CreateList_HL(FILE *fp, LinkList *L, int n) {
     int i;
     LinkList p;

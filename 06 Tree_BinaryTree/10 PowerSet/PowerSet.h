@@ -19,19 +19,19 @@
 typedef LElemType_L PElemType;
 
 /* 幂集函数列表 */
-/*━━━━━━━━━━━━━━━┓
-┃(01)创建集合A，集合元素为int。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(01)创建集合A，集合元素为int。
+**/
 Status CreatePowerSet_PS(FILE *fp, LinkList *A);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法6.14 && 6.15：求取集合A的幂集，集合B暂存每一次求出的幂集子集。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法6.14 && 6.15：求取集合A的幂集，集合B暂存每一次求出的幂集子集。
+**/
 void GetPowerSet_PS(int i, LinkList A, LinkList B);
 
-/*━━━━━━━━━━━━━┓
-┃(03)构造空树HT(初始化树)。┃
-┗━━━━━━━━━━━━━*/
+/**
+(03)构造空树HT(初始化树)。
+**/
 void Output_PS(LinkList A);
 
 
@@ -52,9 +52,9 @@ Status CreatePowerSet_PS(FILE *fp, LinkList *A) {
     return OK;
 }
 
-/*═════════╗
-║ 算法6.14 && 6.15 ║
-╚═════════*/
+/**
+ 算法6.14 && 6.15 
+**/
 void GetPowerSet_PS(int i, LinkList A, LinkList B) {
     int k;
     LElemType_L x;

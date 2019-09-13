@@ -53,95 +53,95 @@ EBox *edgePtr[MAX_EDGE_NUM + 1];                    //弧指针数组
 void (*VisitFunc)(VertexType_AML e);            //函数指针变量
 
 /* 无向图（邻接多重表）函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)算法7.3：构造无向图。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)算法7.3：构造无向图。 
+**/
 Status CreateUDG_AML(FILE *fp, AMLGraph *G);
 
-/*━━━━━━┓
-┃(02)清空图。┃
-┗━━━━━━*/
+/**
+(02)清空图。
+**/
 void ClearGraph_AML(AMLGraph *G);
 
-/*━━━━━━━━━━━┓
-┃(03)寻找顶点u的位置。 ┃
-┗━━━━━━━━━━━*/
+/**
+(03)寻找顶点u的位置。 
+**/
 int LocateVex_AML(AMLGraph G, VertexType_AML u);
 
-/*━━━━━━━━━━━━┓
-┃(04)返回第v个结点的值。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(04)返回第v个结点的值。 
+**/
 VertexType_AML GetVex_M(AMLGraph G, int order);
 
-/*━━━━━━━━━━━┓
-┃(05)对顶点v赋值value。┃
-┗━━━━━━━━━━━*/
+/**
+(05)对顶点v赋值value。
+**/
 Status PutVex_AML(AMLGraph *G, VertexType_AML v, VertexType_AML value);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(06)返回v的第一个邻接顶点序号。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(06)返回v的第一个邻接顶点序号。 
+**/
 int FirstAdjVex_AML(AMLGraph G, VertexType_AML v);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(07)返回v相对于w的下一个邻接顶点序号。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)返回v相对于w的下一个邻接顶点序号。
+**/
 int NextAdjVex_AML(AMLGraph G, VertexType_AML v, VertexType_AML w);
 
-/*━━━━━━━━━━┓
-┃(08)插入顶点v到图。 ┃
-┗━━━━━━━━━━*/
+/**
+(08)插入顶点v到图。 
+**/
 Status InsertVex_AML(AMLGraph *G, VertexType_AML v);
 
-/*━━━━━━━━━━━┓
-┃(09)从图中删除顶点v。 ┃
-┗━━━━━━━━━━━*/
+/**
+(09)从图中删除顶点v。 
+**/
 Status DeleteVex_AML(AMLGraph *G, VertexType_AML v);
 
-/*━━━━━━━━━━━┓
-┃(10)插入弧<v,w>到图。 ┃
-┗━━━━━━━━━━━*/
+/**
+(10)插入弧<v,w>到图。 
+**/
 Status InsertArc_AML(AMLGraph *G, VertexType_AML v, VertexType_AML w, ...);
 
-/*━━━━━━━━━┓
-┃(11)删除弧<v,w> 。┃
-┗━━━━━━━━━*/
+/**
+(11)删除弧<v,w> 。
+**/
 Status DeleteArc_AML(AMLGraph *G, VertexType_AML v, VertexType_AML w);
 
 
 void DFSTraverse_AML(AMLGraph G, void(Visit)(VertexType_AML));
-/*━━━━━━━━━┓
-┃(12)深度优先遍历。┃
-┗━━━━━━━━━*/
-/*━━━━━━━━━━━━━┓
-┃(13)深度优先遍历核心函数。┃
-┗━━━━━━━━━━━━━*/
+/**
+(12)深度优先遍历。
+**/
+/**
+(13)深度优先遍历核心函数。
+**/
 void DFS_AML(AMLGraph G, int v);
 
-/*━━━━━━━━━┓
-┃(14)广度优先遍历。┃
-┗━━━━━━━━━*/
+/**
+(14)广度优先遍历。
+**/
 void BFSTraverse_AML(AMLGraph G, void(Visit)(VertexType_AML));
 
-/*━━━━━━┓
-┃(15)输出图。┃
-┗━━━━━━*/
+/**
+(15)输出图。
+**/
 void OutputAMLGraph(AMLGraph G);
 
-/*━━━━━━━┓
-┃(16)清空标志。┃
-┗━━━━━━━*/
+/**
+(16)清空标志。
+**/
 void ClearMark(AMLGraph G);
 
-/*━━━━━━━━━━━┓
-┃(17)录入弧的相关信息。┃
-┗━━━━━━━━━━━*/
+/**
+(17)录入弧的相关信息。
+**/
 void Input(FILE *fp, InfoType *info);
 
 
-/*════╗
-║ 算法7.3║
-╚════*/
+/**
+ 算法7.3
+**/
 Status CreateUDG_AML(FILE *fp, AMLGraph *G) {
     int i, j, k;
     VertexType_AML v1, v2;

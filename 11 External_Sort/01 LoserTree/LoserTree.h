@@ -37,44 +37,44 @@ typedef struct {
 typedef ExNode External[K + 1];
 
 /* 败者树函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法11.1：利用败者树ls将k个输入归并段中的记录归并到输出归并段。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法11.1：利用败者树ls将k个输入归并段中的记录归并到输出归并段。 
+**/
 void K_Merge(FILE *fp_out, LoserTree ls, External b);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(02)算法11.2：从b[s]出发调整败者树。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法11.2：从b[s]出发调整败者树。
+**/
 void Adjust(LoserTree ls, External b, int s);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法11.3：依次从b[k-1..0]出发，调整ls为败者树。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法11.3：依次从b[k-1..0]出发，调整ls为败者树。 
+**/
 void CreateLoserTree(LoserTree ls, External b);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(04)从文件fp[i]中读取关键字到x。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(04)从文件fp[i]中读取关键字到x。
+**/
 void input(FILE *fp[K], int *x, int i);
 
-/*━━━━━━━━━━━━┓
-┃(05)将x输出到有序表fp。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(05)将x输出到有序表fp。 
+**/
 void output(FILE *fp, int x);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(06)生成MAX个随机数到fp用作测试。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(06)生成MAX个随机数到fp用作测试。 
+**/
 void RandomNum(FILE *fp);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(07)将随机数表fp分段排序后分别写入文件[0..k-1].txt中。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)将随机数表fp分段排序后分别写入文件[0..k-1].txt中。
+**/
 void Cut_Sort(FILE *fp);
 
-/*════╗
-║算法11.1║
-╚════*/
+/**
+算法11.1
+**/
 void K_Merge(FILE *fp_out, LoserTree ls, External b) {
     int i, q;
     FILE *fp_in[K] = {};                //k个输入归并段
@@ -96,9 +96,9 @@ void K_Merge(FILE *fp_out, LoserTree ls, External b) {
     fclose(fp_out);
 }
 
-/*════╗
-║算法11.2║
-╚════*/
+/**
+算法11.2
+**/
 void Adjust(LoserTree ls, External b, int s) {
     int t, tmp;
 
@@ -119,9 +119,9 @@ void Adjust(LoserTree ls, External b, int s) {
     ls[0] = s;                            //顶部结点为最小值
 }
 
-/*════╗
-║算法11.3║
-╚════*/
+/**
+算法11.3
+**/
 void CreateLoserTree(LoserTree ls, External b) {                                        //b[0..k-1]为完全二叉树ls的叶子结点存有k个关键字
     int i;
 

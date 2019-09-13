@@ -32,49 +32,49 @@ typedef struct {
 } RLSMatrix;
 
 /* 行逻辑链接的顺序表（稀疏矩阵）基础操作 */
-/*━━━━━━━━┓
-┃(01)创建矩阵M。 ┃
-┗━━━━━━━━*/
+/**
+(01)创建矩阵M。 
+**/
 Status CreateSMatrix_RL(FILE *fp, int n, ...);
 
-/*━━━━━━━┓
-┃(02)销毁矩阵。┃
-┗━━━━━━━*/
+/**
+(02)销毁矩阵。
+**/
 void DestroySMatrix_RL(RLSMatrix *M);
 
-/*━━━━━━━┓
-┃(03)输出矩阵。┃
-┗━━━━━━━*/
+/**
+(03)输出矩阵。
+**/
 void PrintSMatrix_RL(RLSMatrix M);
 
-/*━━━━━━━━┓
-┃(04)矩阵的复制。┃
-┗━━━━━━━━*/
+/**
+(04)矩阵的复制。
+**/
 void CopySMatrix_RL(RLSMatrix M, RLSMatrix *T);
 
-/*━━━━━━━━┓
-┃(05)Q = M + N。 ┃
-┗━━━━━━━━*/
+/**
+(05)Q = M + N。 
+**/
 Status AddSMatri_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q);
 
-/*━━━━━━━━┓
-┃(06)Q = M - N。 ┃
-┗━━━━━━━━*/
+/**
+(06)Q = M - N。 
+**/
 Status SubSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q);
 
-/*━━━━━━━━━━━━┓
-┃(07)算法5.3：Q = M * N。┃
-┗━━━━━━━━━━━━*/
+/**
+(07)算法5.3：Q = M * N。
+**/
 Status MultSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q);
 
-/*━━━━━━━┓
-┃(08)矩阵转置。┃
-┗━━━━━━━*/
+/**
+(08)矩阵转置。
+**/
 void TransposeSMatrix_RL(RLSMatrix M, RLSMatrix *T);
 
-/*━━━━━━━━━┓
-┃(09)矩阵快速转置。┃
-┗━━━━━━━━━*/
+/**
+(09)矩阵快速转置。
+**/
 void FastTransposeSMatrix_RL(RLSMatrix M, RLSMatrix *T);
 
 
@@ -332,9 +332,9 @@ Status SubSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q) {
     return OK;
 }
 
-/*════╗
-║ 算法5.3║
-╚════*/
+/**
+ 算法5.3
+**/
 Status MultSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q) {
     int arow, brow, p, q, tp, tq, ccol;
     int ctemp[N.nu + 1];                                    //Q中各行元素值累加器，ctemp[0]不用

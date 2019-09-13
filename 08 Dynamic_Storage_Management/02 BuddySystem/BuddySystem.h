@@ -34,29 +34,29 @@ typedef struct HeadNode {
 WORD_b *start, *end;            //内存起点和终点
 
 /* 伙伴系统函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)初始化一块空闲内存块。┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)初始化一块空闲内存块。
+**/
 void InitSpace_b(FreeList avail);
 
-/*━━━━━━━━━━━━┓
-┃(02)算法8.2：分配算法。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(02)算法8.2：分配算法。 
+**/
 WORD_b *AllocBuddy(FreeList avail, int n);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(03)返回p处内存块的伙伴内存块地址。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(03)返回p处内存块的伙伴内存块地址。 
+**/
 WORD_b *Buddy(WORD_b *p);
 
-/*━━━━━━━┓
-┃(04)回收算法。┃
-┗━━━━━━━*/
+/**
+(04)回收算法。
+**/
 void Reclaim_b(FreeList avail, WORD_b **p);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(05)输出当前空闲内存块起止地址。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(05)输出当前空闲内存块起止地址。
+**/
 void PrintLayout_b(FreeList avail);
 
 
@@ -82,9 +82,9 @@ void InitSpace_b(FreeList avail) {
     end = r + avail[M].nodesize - 1;
 }
 
-/*════╗
-║ 算法8.2║
-╚════*/
+/**
+ 算法8.2
+**/
 WORD_b *AllocBuddy(FreeList avail, int n)    //avail[0..m]为可利用空间表，n为申请分配量
 {                                            //包括标志在内分配n个内存
     int k, i;

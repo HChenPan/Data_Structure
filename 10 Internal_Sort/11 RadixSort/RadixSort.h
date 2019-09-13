@@ -39,29 +39,29 @@ typedef struct {
 typedef int ArrType[RADIX];                    //指针数组类型
 
 /* 基数排序函数列表 */
-/*━━━━━━━━━━┓
-┃(01)创建静态链表L。 ┃
-┗━━━━━━━━━━*/
+/**
+(01)创建静态链表L。 
+**/
 void CreateSLList(FILE *fp, SLList *L);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(02)输出静态链表L中的关键字记录。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(02)输出静态链表L中的关键字记录。 
+**/
 void Traverse(SLList L);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法10.17：对静态链表L作基数排序。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法10.17：对静态链表L作基数排序。
+**/
 void RadixSort(SLList *L);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)算法10.15：分配算法，按第i个关键字keys[i]建立RADIX个子表，使同一子表中记录的keys[i]相同。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法10.15：分配算法，按第i个关键字keys[i]建立RADIX个子表，使同一子表中记录的keys[i]相同。 
+**/
 void Distribute(SLCell *r, int i, ArrType f, ArrType e);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(05)算法10.16：收集算法，按keys[i]从小到大地将f[0..RADIX-1]所指各子表依次链接成一个链表。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(05)算法10.16：收集算法，按keys[i]从小到大地将f[0..RADIX-1]所指各子表依次链接成一个链表。 
+**/
 void Collect(SLCell *r, int i, ArrType f, ArrType e);
 
 void CreateSLList(FILE *fp, SLList *L) {
@@ -97,9 +97,9 @@ void Traverse(SLList L) {
     printf("\n");
 }
 
-/*═════╗
-║ 算法10.17║
-╚═════*/
+/**
+ 算法10.17
+**/
 void RadixSort(SLList *L) {
     int i;
     ArrType f, e;
@@ -111,9 +111,9 @@ void RadixSort(SLList *L) {
     }
 }
 
-/*═════╗
-║ 算法10.15║
-╚═════*/
+/**
+ 算法10.15
+**/
 void Distribute(SLCell r[], int i, ArrType f, ArrType e) {
     int j, p;
 
@@ -135,9 +135,9 @@ void Distribute(SLCell r[], int i, ArrType f, ArrType e) {
     }
 }
 
-/*═════╗
-║ 算法10.16║
-╚═════*/
+/**
+ 算法10.16
+**/
 void Collect(SLCell r[], int i, ArrType f, ArrType e) {
     int j, t;
 

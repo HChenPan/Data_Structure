@@ -47,49 +47,49 @@ typedef struct {
 } Result;
 
 /* B+树函数列表 */
-/*━━━━━━━┓
-┃(01)创建B+树。┃
-┗━━━━━━━*/
+/**
+(01)创建B+树。
+**/
 Status CreateB_Tree(B_Tree *B_T, Table T);
 
-/*━━━━━━━━━━━━┓
-┃(02)查找，返回查找信息。┃
-┗━━━━━━━━━━━━*/
+/**
+(02)查找，返回查找信息。
+**/
 Result SearchB_Tree(B_Tree B_T, KeyType K);
 
-/*━━━━━━━━━━━━━┓
-┃(03)返回K在结点p中的次序。┃
-┗━━━━━━━━━━━━━*/
+/**
+(03)返回K在结点p中的次序。
+**/
 int Search(B_TNode *p, KeyType K);
 
-/*━━━━━━━━━━━━┓
-┃(04)将关键字K插入B+树。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(04)将关键字K插入B+树。 
+**/
 Status InsertKey(B_Tree *B_T, KeyType K);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(05)插入，将K插入为结点*q的第i个关键字。┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(05)插入，将K插入为结点*q的第i个关键字。
+**/
 Status InsertB_Tree(B_Tree *B_T, KeyType K, B_TNode *q, int i);
 
-/*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(06)将x和ap分别插入到q->key[i]和q->ptr[i]。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(06)将x和ap分别插入到q->key[i]和q->ptr[i]。 
+**/
 void Insert(B_TNode *q, int i, KeyType x, B_TNode *ap);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(07)以s为界，将q指向的结点分裂成q和ap指向的两部分。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)以s为界，将q指向的结点分裂成q和ap指向的两部分。 
+**/
 void split(B_TNode *q, int s, B_TNode **ap);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(08)生成含信息(BT,x,ap)的新的根结点*BT，原BT和ap为子树指针，q初值为NULL。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(08)生成含信息(BT,x,ap)的新的根结点*BT，原BT和ap为子树指针，q初值为NULL。 
+**/
 void NewRoot(B_Tree *B_T, B_TNode *q, int x, B_TNode *ap);
 
-/*━━━━━━━━━━┓
-┃(09)输出B+树关键字。┃
-┗━━━━━━━━━━*/
+/**
+(09)输出B+树关键字。
+**/
 void PrintB_Tree(B_Tree B_T);
 
 Status CreateB_Tree(B_Tree *B_T, Table T) {

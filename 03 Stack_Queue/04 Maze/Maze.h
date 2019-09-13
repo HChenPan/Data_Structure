@@ -47,65 +47,65 @@ typedef struct                            //通道块信息
 typedef int MazeType;                    //迷宫元素类型
 
 /* 迷宫函数列表 */
-/*━━━━━━━━━━━━━━━━┓
-┃(01)算法3.3：迷宫寻路（穷举法） ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(01)算法3.3：迷宫寻路（穷举法） 
+**/
 Status MazePath(MazeType maze[][N], PosType start, PosType end);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(02)迷宫的初始化,包括出入口的初始化 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(02)迷宫的初始化,包括出入口的初始化 
+**/
 void InitMaze(MazeType maze[][N], PosType *start, PosType *end);
 
-/*━━━━━━━━━━┓
-┃(03)在屏幕上画出迷宫┃
-┗━━━━━━━━━━*/
+/**
+(03)在屏幕上画出迷宫
+**/
 void PaintMaze(MazeType maze[][N]);
 
-/*━━━━━━━┓
-┃(04)迷宫的显示┃
-┗━━━━━━━*/
+/**
+(04)迷宫的显示
+**/
 void ShowMaze(MazeType maze[][N]);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(05)比较迷宫中两个通道块是否为同一通道块┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(05)比较迷宫中两个通道块是否为同一通道块
+**/
 Status EqualPosType(PosType a, PosType b);
 
-/*━━━━━━━━━━━━━┓
-┃(06)判定此通道块是否未访问┃
-┗━━━━━━━━━━━━━*/
+/**
+(06)判定此通道块是否未访问
+**/
 Status Pass(PosType seat, MazeType maze[][N]);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(07)遇到未访问结点时留下初始足迹┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(07)遇到未访问结点时留下初始足迹
+**/
 void FootPrint(PosType seat, MazeType maze[][N]);
 
-/*━━━━━━━━━━┓
-┃(08)更新通道块的信息┃
-┗━━━━━━━━━━*/
+/**
+(08)更新通道块的信息
+**/
 void SetSElemType(SElemType_Sq *e, int ord, PosType seat, int di);
 
-/*━━━━━━━━━━┓
-┃(09)当前通道块的后继┃
-┗━━━━━━━━━━*/
+/**
+(09)当前通道块的后继
+**/
 PosType NextPos(PosType seat, int di);
 
-/*━━━━━━━━━━━━┓
-┃(10)判断当前位置是否越界┃
-┗━━━━━━━━━━━━*/
+/**
+(10)判断当前位置是否越界
+**/
 Status IsCross(PosType seat);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(11)标记当前位置上的通道块不可访问┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(11)标记当前位置上的通道块不可访问
+**/
 void MarkPrint(PosType seat, MazeType maze[][N]);
 
 
-/*════╗
-║ 算法3.3║
-╚════*/
+/**
+ 算法3.3
+**/
 Status MazePath(MazeType maze[][N], PosType start, PosType end) {
     SqStack S;
     SElemType_Sq nodeInf;                    //nodeInf存储当前通道块信息

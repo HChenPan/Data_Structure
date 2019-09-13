@@ -41,24 +41,24 @@ typedef struct DLTNode                        //双链树存储表示
 typedef DLTNode *DLTree;                    //指向B树结点的指针
 
 /* 双链树函数列表 */
-/*━━━━━━━━┓
-┃(01)创建双链树。┃
-┗━━━━━━━━*/
+/**
+(01)创建双链树。
+**/
 Status CreateDLTree(FILE *fp, DLTree *DLT);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法9.15：查找，返回指向K的指针。 ┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法9.15：查找，返回指向K的指针。 
+**/
 Record *SearchDLTree(DLTree DLT, KeysType K);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(03)插入：将关键字K插入到双链树中。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(03)插入：将关键字K插入到双链树中。 
+**/
 Status InsertDLTree(DLTree *DLT, KeysType K);
 
-/*━━━━━━━━━━━━┓
-┃(04)输出双链树中关键字。┃
-┗━━━━━━━━━━━━*/
+/**
+(04)输出双链树中关键字。
+**/
 void PrintKeys(DLTree DLT);
 
 Status CreateDLTree(FILE *fp, DLTree *DLT) {
@@ -79,9 +79,9 @@ Status CreateDLTree(FILE *fp, DLTree *DLT) {
     return OK;
 }
 
-/*════╗
-║算法9.15║
-╚════*/
+/**
+算法9.15
+**/
 Record *SearchDLTree(DLTree DLT, KeysType K) {
     DLTree p;
     int i;

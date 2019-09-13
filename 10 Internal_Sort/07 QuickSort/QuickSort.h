@@ -13,29 +13,29 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 快速排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━┓
-┃(01)算法10.6(a)：完成一趟快速排序。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法10.6(a)：完成一趟快速排序。 
+**/
 int Partition_1(SqList_sort *L, int low, int high);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(02)算法10.6(b)：完成一趟快速排序。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法10.6(b)：完成一趟快速排序。 
+**/
 int Partition_2(SqList_sort *L, int low, int high);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法10.8：对顺序表L中的子序列L.r[low..high]作快速排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法10.8：对顺序表L中的子序列L.r[low..high]作快速排序。 
+**/
 void QSort(SqList_sort *L, int low, int high);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(04)算法10.7：对顺序表L作快速排序。 ┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法10.7：对顺序表L作快速排序。 
+**/
 void QuickSort(SqList_sort *L);
 
-/*══════╗
-║ 算法10.6(a)║
-╚══════*/
+/**
+ 算法10.6(a)
+**/
 int Partition_1(SqList_sort *L, int low, int high) {
     int pivotkey;
     RcdType tmp;
@@ -62,9 +62,9 @@ int Partition_1(SqList_sort *L, int low, int high) {
     return low;                                    //返回枢轴所在位置
 }
 
-/*══════╗
-║ 算法10.6(b)║
-╚══════*/
+/**
+ 算法10.6(b)
+**/
 int Partition_2(SqList_sort *L, int low, int high) {
     int pivotkey;
 
@@ -89,9 +89,9 @@ int Partition_2(SqList_sort *L, int low, int high) {
     return low;                                    //返回枢轴所在位置
 }
 
-/*════╗
-║算法10.7║
-╚════*/
+/**
+算法10.7
+**/
 void QSort(SqList_sort *L, int low, int high) {
     int pivotloc;
 
@@ -106,9 +106,9 @@ void QSort(SqList_sort *L, int low, int high) {
     }
 }
 
-/*════╗
-║算法10.8║
-╚════*/
+/**
+算法10.8
+**/
 void QuickSort(SqList_sort *L) {
     QSort(L, 1, (*L).length);
 }

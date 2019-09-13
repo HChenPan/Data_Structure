@@ -13,19 +13,19 @@
 
 #include "../02 SequenceList/SequenceList.h"
 /* 并集函数列表 */
-/*━━━━━━━━━━━┓
-┃(01)算法2.1：A=A∪B。 ┃
-┗━━━━━━━━━━━*/
+/**
+(01)算法2.1：A=A∪B。 
+**/
 void Union(SqList *La, SqList Lb);
 
-/*━━━━━━━━━━━━┓
-┃(02)判断两元素是否相等。┃
-┗━━━━━━━━━━━━*/
+/**
+(02)判断两元素是否相等。
+**/
 Status equal(LElemType_Sq e1, LElemType_Sq e2);
 
-/*════╗
-║ 算法2.1║ 
-╚════*/
+/**
+ 算法2.1 
+**/
 void Union(SqList *La, SqList Lb) {
     int La_len, Lb_len;
     int i;

@@ -33,124 +33,124 @@ typedef TBiTree QElemType_L;
 
 /* 二叉树三叉链表存储结构函数列表 */
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(01)构造空二叉树T (初始化二叉树)。┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(01)构造空二叉树T (初始化二叉树)。
+**/
 void InitBiTree_Tri(TBiTree *T);
 
-/*━━━━━━━━━┓
-┃(02)清空二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(02)清空二叉树T。 
+**/
 void ClearBiTree_Tri(TBiTree *T);
 
-/*━━━━━━━━━┓
-┃(03)销毁二叉树T。 ┃
-┗━━━━━━━━━*/
+/**
+(03)销毁二叉树T。 
+**/
 void DestroyBiTree_Tri(TBiTree *T);
 
-/*━━━━━━━━━━━━━┓
-┃(04)判断二叉树T是否为空。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(04)判断二叉树T是否为空。 
+**/
 Status BiTreeEmpty_Tri(TBiTree T);
 
-/*━━━━━━━━━━━━┓
-┃(05)二叉树构造函数调用。┃
-┗━━━━━━━━━━━━*/
+/**
+(05)二叉树构造函数调用。
+**/
 void Create_Tri(TBiTree *T, FILE *fp);
 
-/*━━━━━━━━━━━━━┓
-┃(06)按先序序列构造二叉树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(06)按先序序列构造二叉树。
+**/
 Status CreateBiTree_Tri(FILE *fp, TBiTree *T);
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(07)返回二叉树长度（按完全二叉树计算）。┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)返回二叉树长度（按完全二叉树计算）。
+**/
 int BiTreeLength_Tri(TBiTree T);
 
-/*━━━━━━━━━━━━━━┓
-┃(08)返回二叉树深度（层数）。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(08)返回二叉树深度（层数）。
+**/
 int BiTreeDepth_Tri(TBiTree T);
 
-/*━━━━━━━━━━━━━━━┓
-┃(09)用e返回二叉树的根结点值。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(09)用e返回二叉树的根结点值。 
+**/
 Status Root_Tri(TBiTree T, TElemType_Tri *e);
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(10)返回某结点的值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(10)返回某结点的值，p为结点指针。 
+**/
 TElemType_Tri Value_Tri(TBiTree p);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(11)为某结点赋值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(11)为某结点赋值，p为结点指针。 
+**/
 void Assign_Tri(TBiTree p, TElemType_Tri value);
 
-/*━━━━━━━━━━━━━┓
-┃(12)返回指向某结点的指针。┃
-┗━━━━━━━━━━━━━*/
+/**
+(12)返回指向某结点的指针。
+**/
 TBiTree Point(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━┓
-┃(13)返回某结点的双亲结点值。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(13)返回某结点的双亲结点值。
+**/
 TElemType_Tri Parent_Tri(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(14)返回某结点的左孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(14)返回某结点的左孩子结点值。
+**/
 TElemType_Tri LeftChild_Tri(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(15)返回某结点的右孩子结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(15)返回某结点的右孩子结点值。
+**/
 TElemType_Tri RightChild_Tri(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(16)返回某结点的左兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(16)返回某结点的左兄弟结点值。
+**/
 TElemType_Tri LeftSibling_Tri(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━━┓
-┃(17)返回某结点的右兄弟结点值。┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(17)返回某结点的右兄弟结点值。
+**/
 TElemType_Tri RightSibling_Tri(TBiTree T, TElemType_Tri e);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(18)将树T0插入到树T中成为结点e的子树，LR为插入标记。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(18)将树T0插入到树T中成为结点e的子树，LR为插入标记。
+**/
 Status InsertBiTree_Tri(TBiTree T, TElemType_Tri e, TBiTree *T0, int LR);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(19)删除e结点的左子树或右子树，LR为删除标记。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(19)删除e结点的左子树或右子树，LR为删除标记。 
+**/
 Status DeleteBiTree_Tri(TBiTree T, TElemType_Tri e, int LR);
 
-/*━━━━━━━━━━┓
-┃(20)层序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(20)层序遍历二叉树。
+**/
 void LevelOrderTraverse_Tri(TBiTree T, void(Visit)(TElemType_Tri));
 
-/*━━━━━━━━━━┓
-┃(21)前序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(21)前序遍历二叉树。
+**/
 void PreOrderTraverse_Tri(TBiTree T, void(Visit)(TElemType_Tri));
 
-/*━━━━━━━━━━┓
-┃(22)中序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(22)中序遍历二叉树。
+**/
 void InOrderTraverse_Tri(TBiTree T, void(Visit)(TElemType_Tri));
 
-/*━━━━━━━━━━┓
-┃(23)后序遍历二叉树。┃
-┗━━━━━━━━━━*/
+/**
+(23)后序遍历二叉树。
+**/
 void PostOrderTraverse_Tri(TBiTree T, void(Visit)(TElemType_Tri));
 
-/*━━━━━━━━━━━━━┓
-┃(24)按二叉树的结构打印树。┃
-┗━━━━━━━━━━━━━*/
+/**
+(24)按二叉树的结构打印树。
+**/
 void Print_Tri(TBiTree T);
 
 

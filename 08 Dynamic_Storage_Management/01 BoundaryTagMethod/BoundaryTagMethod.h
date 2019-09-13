@@ -36,24 +36,24 @@ typedef WORD_a *Space;                //Space：可利用空间指针类型
 Space av;                            //整个内存块的起始地址
 
 /* 边界标识法函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)初始化一块空闲内存块。┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)初始化一块空闲内存块。
+**/
 void InitSpace_a(WORD_a memory[MAX + 2]);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法8.1：分配算法（首次拟合法）。 ┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法8.1：分配算法（首次拟合法）。 
+**/
 Space AllocBoundTag(Space *pav, int n);
 
-/*━━━━━━━┓
-┃(03)回收算法。┃
-┗━━━━━━━*/
+/**
+(03)回收算法。
+**/
 void Reclaim_a(Space *pav, Space *p);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(04)输出当前空闲内存块起止地址。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(04)输出当前空闲内存块起止地址。
+**/
 void PrintLayout_a(Space av, Space pav);
 
 
@@ -73,9 +73,9 @@ void InitSpace_a(WORD_a memory[MAX + 2]) {
     av = pav;
 }
 
-/*════╗
-║ 算法8.1║
-╚════*/
+/**
+ 算法8.1
+**/
 Space AllocBoundTag(Space *pav, int n)    //请求分配n个字
 {
     Space p, f;

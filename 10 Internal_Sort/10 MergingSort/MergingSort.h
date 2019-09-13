@@ -13,24 +13,24 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 归并排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法10.12：将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n]。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法10.12：将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n]。 
+**/
 void Merge(RcdType SR[], RcdType TR[], int i, int m, int n);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法10.13：将SR[s..t]归并排序为TR[s..t]。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法10.13：将SR[s..t]归并排序为TR[s..t]。 
+**/
 void MSort(RcdType SR[], RcdType TR[], int s, int t);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(03)算法10.14：对顺序表L作归并排序。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法10.14：对顺序表L作归并排序。
+**/
 void MergeSort(SqList_sort *L);
 
-/*═════╗
-║ 算法10.12║
-╚═════*/
+/**
+ 算法10.12
+**/
 void Merge(RcdType SR[], RcdType TR[], int i, int m, int n) {
     int j, k;
 
@@ -49,9 +49,9 @@ void Merge(RcdType SR[], RcdType TR[], int i, int m, int n) {
         TR[k++] = SR[j++];
 }
 
-/*═════╗
-║ 算法10.13║
-╚═════*/
+/**
+ 算法10.13
+**/
 void MSort(RcdType SR[], RcdType TR[], int s, int t) {
     int m;
     RcdType R[MAXSIZE + 1];
@@ -66,9 +66,9 @@ void MSort(RcdType SR[], RcdType TR[], int s, int t) {
     }
 }
 
-/*═════╗
-║ 算法10.14║
-╚═════*/
+/**
+ 算法10.14
+**/
 void MergeSort(SqList_sort *L) {
     MSort((*L).r, (*L).r, 1, (*L).length);
 }

@@ -13,14 +13,14 @@
 #include "../00 StaticLinkedListType/StaticLinkedListType.h"    //**10 Internal_Sort**//
 
 /* 表插入排序函数列表 */
-/*━━━━━━━━━━━━━━━┓
-┃(01)对静态链表L作表插入排序。 ┃
-┗━━━━━━━━━━━━━━━*/
+/**
+(01)对静态链表L作表插入排序。 
+**/
 void TInsertSort(SLinkList_sort *L);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法10.3：根据各记录指针，对L中的记录重新排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法10.3：根据各记录指针，对L中的记录重新排序。 
+**/
 void Arrange(SLinkList_sort *L);
 
 void TInsertSort(SLinkList_sort *L) {
@@ -37,9 +37,9 @@ void TInsertSort(SLinkList_sort *L) {
     Arrange(L);                            //对记录进行排序
 }
 
-/*════╗
-║算法10.3║
-╚════*/
+/**
+算法10.3
+**/
 void Arrange(SLinkList_sort *L) {
     int p, q, i;
     SLNode tmp;

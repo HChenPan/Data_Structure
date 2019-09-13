@@ -6,12 +6,12 @@
 //Date 2019/9/10 上午 12:36
 //Version 1.0
 //
-/*━━━━━━━━━━━━━━━━━━━━━━━━┓
+/*
 ★备注：                                          ┃
 ★1.为操作方便，特为申请到的空间段设一“头结点”。┃
 ★2.模拟系统动态申请空间过程。                    ┃
-★3.个别操作会与严蔚敏数据结构课本有所差异。      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━*/
+★3.个别操作会与严蔚敏数据结构课本有所差异。      
+**/
 
 #ifndef DATA_STRUCTURE_STATICLINKEDLIST_H
 #define DATA_STRUCTURE_STATICLINKEDLIST_H
@@ -34,85 +34,85 @@ typedef struct {
 Component SPACE;                        //静态链表空间
 
 /*	静态链表函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法2.14：将一维数组SPACE中各分量链成一个大的备用空间。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法2.14：将一维数组SPACE中各分量链成一个大的备用空间。 
+**/
 void InitSpace_SL();
 
-/*━━━━━━━━━━━━━━━━━┓
-┃(02)算法2.15：为插入数据申请空间。┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法2.15：为插入数据申请空间。
+**/
 int Malloc_SL();
 
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(03)算法2.16：将下标为k的空闲结点回收。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(03)算法2.16：将下标为k的空闲结点回收。 
+**/
 void Free_SL(int k);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(04)初始化静态链表，建立头结点。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(04)初始化静态链表，建立头结点。
+**/
 int InitList_SL(SLinkList *H);
 
-/*━━━━━┓
-┃(05)置空。┃
-┗━━━━━*/
+/**
+(05)置空。
+**/
 Status ClearList_SL(SLinkList H);
 
-/*━━━━━┓
-┃(06)销毁。┃
-┗━━━━━*/
+/**
+(06)销毁。
+**/
 void DestroyList_SL(SLinkList *H);
 
-/*━━━━━┓
-┃(07)判空。┃
-┗━━━━━*/
+/**
+(07)判空。
+**/
 Status ListEmpty_SL(SLinkList H);
 
-/*━━━━━┓
-┃(08)求长。┃
-┗━━━━━*/
+/**
+(08)求长。
+**/
 int ListLength_SL(SLinkList H);
 
-/*━━━━━┓
-┃(09)取值。┃
-┗━━━━━*/
+/**
+(09)取值。
+**/
 Status GetElem_SL(SLinkList H, int i, LElemType_S *e);
 
-/*━━━━━━━━━━━━━━━━┓
-┃(10)算法2.13：返回元素e的位序。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(10)算法2.13：返回元素e的位序。 
+**/
 int LocateElem_SL(SLinkList H, LElemType_S e);
 
-/*━━━━━┓
-┃(11)前驱。┃
-┗━━━━━*/
+/**
+(11)前驱。
+**/
 Status PriorElem_SL(SLinkList H, LElemType_S cur_e, LElemType_S *pre_e);
 
-/*━━━━━┓
-┃(12)后继。┃
-┗━━━━━*/
+/**
+(12)后继。
+**/
 Status NextElem_SL(SLinkList H, LElemType_S cur_e, LElemType_S *next_e);
 
-/*━━━━━┓
-┃(13)插入。┃
-┗━━━━━*/
+/**
+(13)插入。
+**/
 Status ListInsert_SL(SLinkList H, int i, LElemType_S e);
 
-/*━━━━━┓
-┃(14)删除。┃
-┗━━━━━*/
+/**
+(14)删除。
+**/
 Status ListDelete_SL(SLinkList H, int i, LElemType_S *e);
 
-/*━━━━━┓
-┃(15)访问。┃
-┗━━━━━*/
+/**
+(15)访问。
+**/
 Status ListTraverse_SL(SLinkList H, void(Visit)(LElemType_S));
 
 
-/*═════╗
-║ 算法2.14 ║ 
-╚═════*/
+/**
+ 算法2.14  
+**/
 void InitSpace_SL() {
     //首先初始化备用空间 
     int i;                                //0号单元做备用空间的起始结点 
@@ -123,9 +123,9 @@ void InitSpace_SL() {
     SPACE[MAXSIZE - 1].cur = 0;
 }
 
-/*═════╗
-║ 算法2.15 ║ 
-╚═════*/
+/**
+ 算法2.15  
+**/
 int Malloc_SL()                            //从备用空间申请结点空间
 {
     int i;
@@ -139,9 +139,9 @@ int Malloc_SL()                            //从备用空间申请结点空间
         return 0;                        //申请失败返回0 
 }
 
-/*═════╗
-║ 算法2.16 ║ 
-╚═════*/
+/**
+ 算法2.16  
+**/
 void Free_SL(int k)                    //回收k结点空间 
 {
     SPACE[k].cur = SPACE[0].cur;
@@ -230,9 +230,9 @@ Status GetElem_SL(SLinkList H, int i, LElemType_S *e) {
     }
 }
 
-/*═════╗
-║ 算法2.13 ║ 
-╚═════*/
+/**
+ 算法2.13  
+**/
 int LocateElem_SL(SLinkList H, LElemType_S e) {
     int k, count;
 

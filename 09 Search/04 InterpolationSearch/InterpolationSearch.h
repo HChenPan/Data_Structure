@@ -13,9 +13,9 @@
 #include "../00 Base/Base.h"                    //**09 Search**//
 
 /* 插值查找函数列表 */
-/*━━━━━━━━━━━━━━━━┓
-┃(01)插值法查找关键字key的位置。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(01)插值法查找关键字key的位置。 
+**/
 int Search_Int(Table T, KeyType key);
 
 int Search_Int(Table T, KeyType key) {

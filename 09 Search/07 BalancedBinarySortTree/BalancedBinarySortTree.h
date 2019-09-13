@@ -41,59 +41,59 @@ typedef BBSTNode *BBSTree;                //指向平衡二叉排序树结点的
 
 /* 平衡二叉树（AVL树）函数列表 */
 
-/*━━━━━━━━┓
-┃(01)创建AVL树。 ┃
-┗━━━━━━━━*/
+/**
+(01)创建AVL树。 
+**/
 Status CreateAVL(BBSTree *BBST, Table T);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)查找，返回指向key的指针，若不存在返回MULL。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)查找，返回指向key的指针，若不存在返回MULL。 
+**/
 BBSTree SearchAVL(BBSTree BBST, KeyType key);
 
-/*━━━━━━━━━━┓
-┃(03)算法9.11：插入。┃
-┗━━━━━━━━━━*/
+/**
+(03)算法9.11：插入。
+**/
 Status InsertAVL(BBSTree *BBST, ElemType_Search e, Boolean *taller);
 
-/*━━━━━┓
-┃(04)删除。┃
-┗━━━━━*/
+/**
+(04)删除。
+**/
 Status DeleteAVL(BBSTree *BBST, ElemType_Search e, BBSTree f, BBSTree p, Boolean *taller, int mark);
 
-/*━━━━━━━━┓
-┃(05)右平衡处理。┃
-┗━━━━━━━━*/
+/**
+(05)右平衡处理。
+**/
 void RightBalance(BBSTree *BBST);
 
-/*━━━━━━━━━━━━━┓
-┃(06)算法9.12：左平衡处理。┃
-┗━━━━━━━━━━━━━*/
+/**
+(06)算法9.12：左平衡处理。
+**/
 void LeftBalance(BBSTree *BBST);
 
-/*━━━━━━━━━━┓
-┃(07)算法9.9：右旋。 ┃
-┗━━━━━━━━━━*/
+/**
+(07)算法9.9：右旋。 
+**/
 void R_Rotate(BBSTree *p);
 
-/*━━━━━━━━━━┓
-┃(08)算法9.10：左旋。┃
-┗━━━━━━━━━━*/
+/**
+(08)算法9.10：左旋。
+**/
 void L_Rotate(BBSTree *p);
 
-/*━━━━━━━┓
-┃(09)中序遍历。┃
-┗━━━━━━━*/
+/**
+(09)中序遍历。
+**/
 void InOrderTraverse_AVL(BBSTree BBST, void(Visit)(ElemType_Search));
 
-/*━━━━━━━━┓
-┃(10)求树的深度。┃
-┗━━━━━━━━*/
+/**
+(10)求树的深度。
+**/
 int AVLDepth(BBSTree BBST);
 
-/*━━━━━━┓
-┃(11)打印树。┃
-┗━━━━━━*/
+/**
+(11)打印树。
+**/
 void PrintAVLTree(BBSTree BBST);
 
 Status CreateAVL(BBSTree *BBST, Table T) {
@@ -119,9 +119,9 @@ BBSTree SearchAVL(BBSTree BBST, KeyType key) {
         return SearchAVL(BBST->rchild, key);
 }
 
-/*════╗
-║算法9.11║
-╚════*/
+/**
+算法9.11
+**/
 Status InsertAVL(BBSTree *BBST, ElemType_Search e,
                  Boolean *taller) {                                                //进行了插入操作，则返回1，否则返回0
     if (!(*BBST))                                //插入新结点，树“长高”，置taller为TRUE
@@ -348,9 +348,9 @@ void RightBalance(BBSTree *BBST) {
     }
 }
 
-/*════╗
-║算法9.12║
-╚════*/
+/**
+算法9.12
+**/
 void LeftBalance(BBSTree *BBST) {
     BBSTree lc, rd;
 
@@ -384,9 +384,9 @@ void LeftBalance(BBSTree *BBST) {
     }
 }
 
-/*════╗
-║ 算法9.9║
-╚════*/
+/**
+ 算法9.9
+**/
 void R_Rotate(BBSTree *p) {
     BBSTree lc;
 
@@ -396,9 +396,9 @@ void R_Rotate(BBSTree *p) {
     *p = lc;
 }
 
-/*════╗
-║算法9.10║
-╚════*/
+/**
+算法9.10
+**/
 void L_Rotate(BBSTree *p) {
     BBSTree rc;
 

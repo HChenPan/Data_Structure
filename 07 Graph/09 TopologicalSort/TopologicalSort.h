@@ -16,20 +16,20 @@
 #include "../02 ALGraph/ALGraph.h"                                //**07 Graph**//
 
 /* 有向图拓扑排序函数列表 */
-/*━━━━━━━━━━━━━━━━┓
-┃(01)算法7.12：求有向图拓扑排序。┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(01)算法7.12：求有向图拓扑排序。
+**/
 Status TopologicalSort(ALGraph G, int Topo[]);
 
-/*━━━━━━━━━━━━━┓
-┃(02)对有向图各顶点求入度。┃
-┗━━━━━━━━━━━━━*/
+/**
+(02)对有向图各顶点求入度。
+**/
 void FindInDegree(ALGraph G, int indegree[MAX_VERTEX_NUM + 1]);
 
 
-/*════╗
-║算法7.12║
-╚════*/
+/**
+算法7.12
+**/
 Status TopologicalSort(ALGraph G, int Topo[])            //数组Topo存储拓扑序列
 {
     SqStack S;

@@ -48,105 +48,105 @@ Status visited[MAX_VERTEX_NUM + 1];        //标志数组
 void (*VisitFunc)(VertexType_OL e);        //函数指针变量
 
 /* 有向图（十字链表）函数列表 */
-/*━━━━━━━━━━━━━┓
-┃(01)算法7.3：构造有向图。 ┃
-┗━━━━━━━━━━━━━*/
+/**
+(01)算法7.3：构造有向图。 
+**/
 Status CreateDG_OL(FILE *fp, OLGraph *G);
 
 
-/*━━━━━━┓
-┃(02)清空图。┃
-┗━━━━━━*/
+/**
+(02)清空图。
+**/
 void ClearGraph_OL(OLGraph *G);
 
 
-/*━━━━━━━━━━━┓
-┃(03)寻找顶点u的位置。 ┃
-┗━━━━━━━━━━━*/
+/**
+(03)寻找顶点u的位置。 
+**/
 int LocateVex_OL(OLGraph G, VertexType_OL u);
 
 
-/*━━━━━━━━━━━━┓
-┃(04)返回第v个结点的值。 ┃
-┗━━━━━━━━━━━━*/
+/**
+(04)返回第v个结点的值。 
+**/
 VertexType_OL GetVex_M(OLGraph G, int order);
 
 
-/*━━━━━━━━━━━┓
-┃(05)对顶点v赋值value。┃
-┗━━━━━━━━━━━*/
+/**
+(05)对顶点v赋值value。
+**/
 Status PutVex_OL(OLGraph *G, VertexType_OL v, VertexType_OL value);
 
 
-/*━━━━━━━━━━━━━━━━┓
-┃(06)返回v的第一个邻接顶点序号。 ┃
-┗━━━━━━━━━━━━━━━━*/
+/**
+(06)返回v的第一个邻接顶点序号。 
+**/
 int FirstAdjVex_OL(OLGraph G, VertexType_OL v);
 
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(07)返回v相对于w的下一个邻接顶点序号。┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(07)返回v相对于w的下一个邻接顶点序号。
+**/
 int NextAdjVex_OL(OLGraph G, VertexType_OL v, VertexType_OL w);
 
 
-/*━━━━━━━━━━┓
-┃(08)插入顶点v到图。 ┃
-┗━━━━━━━━━━*/
+/**
+(08)插入顶点v到图。 
+**/
 Status InsertVex_OL(OLGraph *G, VertexType_OL v);
 
 
-/*━━━━━━━━━━━┓
-┃(09)从图中删除顶点v。 ┃
-┗━━━━━━━━━━━*/
+/**
+(09)从图中删除顶点v。 
+**/
 Status DeleteVex_OL(OLGraph *G, VertexType_OL v);
 
 
-/*━━━━━━━━━━━┓
-┃(10)插入弧<v,w>到图。 ┃
-┗━━━━━━━━━━━*/
+/**
+(10)插入弧<v,w>到图。 
+**/
 Status InsertArc_OL(OLGraph *G, VertexType_OL v, VertexType_OL w, ...);
 
 
-/*━━━━━━━━━┓
-┃(11)删除弧<v,w>。 ┃
-┗━━━━━━━━━*/
+/**
+(11)删除弧<v,w>。 
+**/
 Status DeleteArc_OL(OLGraph *G, VertexType_OL v, VertexType_OL w);
 
 
-/*━━━━━━━━━┓
-┃(12)深度优先遍历。┃
-┗━━━━━━━━━*/
+/**
+(12)深度优先遍历。
+**/
 void DFSTraverse_OL(OLGraph G, void (Visit)(VertexType_OL));
 
 
-/*━━━━━━━━━━━━━┓
-┃(13)深度优先遍历核心函数。┃
-┗━━━━━━━━━━━━━*/
+/**
+(13)深度优先遍历核心函数。
+**/
 void DFS_OL(OLGraph G, int v);
 
 
-/*━━━━━━━━━┓
-┃(14)广度优先遍历。┃
-┗━━━━━━━━━*/
+/**
+(14)广度优先遍历。
+**/
 void BFSTraverse_OL(OLGraph G, void (Visit)(VertexType_OL));
 
 
-/*━━━━━━┓
-┃(15)输出图。┃
-┗━━━━━━*/
+/**
+(15)输出图。
+**/
 void OutputOLGraph(OLGraph G);
 
 
-/*━━━━━━━━━━━┓
-┃(16)录入弧的相关信息。┃
-┗━━━━━━━━━━━*/
+/**
+(16)录入弧的相关信息。
+**/
 void Input(FILE *fp, InfoType *info);
 
 
-/*════╗
-║ 算法7.3║
-╚════*/
+/**
+ 算法7.3
+**/
 Status CreateDG_OL(FILE *fp, OLGraph *G) {
     int i, j, k;
     VertexType_OL v1, v2;

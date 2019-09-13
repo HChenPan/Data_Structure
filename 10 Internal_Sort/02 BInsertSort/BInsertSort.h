@@ -13,14 +13,14 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 折半插入排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法10.2：对顺序表L作折半插入排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法10.2：对顺序表L作折半插入排序。 
+**/
 void BInsertSort(SqList_sort *L);
 
-/*════╗
-║算法10.2║
-╚════*/
+/**
+算法10.2
+**/
 void BInsertSort(SqList_sort *L) {
     int i, j, low, high, m;
 

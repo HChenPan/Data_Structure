@@ -14,19 +14,19 @@
 #include "../02 SequenceList/SequenceList.h"
 /* 顺序表归并函数列表 */
 
-/*━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法2.2：求C=A+B，A,B,C均为非递减序列 ┃
-┗━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法2.2：求C=A+B，A,B,C均为非递减序列 
+**/
 void MergeSqList_1(SqList La, SqList Lb, SqList *Lc);
 
-/*━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法2.7：求C=A+B，A,B,C均为非递减序列 ┃
-┗━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法2.7：求C=A+B，A,B,C均为非递减序列 
+**/
 void MergeSqList_2(SqList La, SqList Lb, SqList *Lc);
 
-/*════╗
-║ 算法2.2║ 
-╚════*/
+/**
+ 算法2.2 
+**/
 void MergeSqList_1(SqList La, SqList Lb, SqList *Lc)    //调用顺序表函数进行合并 
 {
     int La_len, Lb_len;
@@ -67,9 +67,9 @@ void MergeSqList_1(SqList La, SqList Lb, SqList *Lc)    //调用顺序表函数�
     }
 }
 
-/*════╗
-║ 算法2.7║ 
-╚════*/
+/**
+ 算法2.7 
+**/
 void MergeSqList_2(SqList La, SqList Lb, SqList *Lc) {
     LElemType_Sq *pa, *pb, *pc;
     LElemType_Sq *pa_last, *pb_last;

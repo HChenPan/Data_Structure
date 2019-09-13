@@ -15,14 +15,14 @@
 #include "../06 StaticLinkedList/StaticLinkedList.h"        //**▲02 线性表**//
 /* 算法2.17函数列表 */
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法2.17：在一维数组中建立集合(A-B)∪(B-A)┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法2.17：在一维数组中建立集合(A-B)∪(B-A)
+**/
 void difference(SLinkList *S, LElemType_S A[], int len_A, LElemType_S B[], int len_B);
 
-/*═════╗
-║ 算法2.17 ║ 
-╚═════*/
+/**
+ 算法2.17  
+**/
 void difference(SLinkList *S, LElemType_S A[], int len_A, LElemType_S B[], int len_B) {
     int i, j;
     int r, p, k;

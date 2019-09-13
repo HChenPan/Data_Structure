@@ -32,50 +32,50 @@ typedef struct {
 } CrossList;
 
 /* 十字链表（稀疏矩阵）函数列表 */
-/*━━━━━━━━━━━━┓
-┃(01)算法5.4：创建矩阵M。┃
-┗━━━━━━━━━━━━*/
+/**
+(01)算法5.4：创建矩阵M。
+**/
 Status CreateSMatrix_OL(FILE *fp, int n, ...);
 
-/*━━━━━━━┓
-┃(02)销毁矩阵。┃
-┗━━━━━━━*/
+/**
+(02)销毁矩阵。
+**/
 void DestroySMatrix_OL(CrossList *M);
 
-/*━━━━━━━┓
-┃(03)输出矩阵。┃
-┗━━━━━━━*/
+/**
+(03)输出矩阵。
+**/
 void PrintSMatrix_OL(CrossList M);
 
-/*━━━━━━━━┓
-┃(04)矩阵的复制。┃
-┗━━━━━━━━*/
+/**
+(04)矩阵的复制。
+**/
 void CopySMatrix_OL(CrossList M, CrossList *T);
 
-/*━━━━━━━━┓
-┃(05)Q = M + N。 ┃
-┗━━━━━━━━*/
+/**
+(05)Q = M + N。 
+**/
 Status AddSMatri_OL(CrossList M, CrossList N, CrossList *Q);
 
-/*━━━━━━━━┓
-┃(06)Q = M - N。 ┃
-┗━━━━━━━━*/
+/**
+(06)Q = M - N。 
+**/
 Status SubSMatrix_OL(CrossList M, CrossList N, CrossList *Q);
 
-/*━━━━━━━━┓
-┃(07)Q = M * N。 ┃
-┗━━━━━━━━*/
+/**
+(07)Q = M * N。 
+**/
 Status MultSMatrix_OL(CrossList M, CrossList N, CrossList *Q);
 
-/*━━━━━━━┓
-┃(08)矩阵转置。┃
-┗━━━━━━━*/
+/**
+(08)矩阵转置。
+**/
 void TransposeSMatrix_OL(CrossList M, CrossList *T);
 
 
-/*════╗
-║ 算法5.4║
-╚════*/
+/**
+ 算法5.4
+**/
 Status CreateSMatrix_OL(FILE *fp, int n, ...) {
     int count, k;
     OLNode *p, *q;

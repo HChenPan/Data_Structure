@@ -13,14 +13,14 @@
 #include "../00 SequenceListType/SequenceListType.h"    //**10 Internal_Sort**//
 
 /* 直接插入排序函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法10.1：对顺序表L作直接插入排序。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法10.1：对顺序表L作直接插入排序。 
+**/
 void InsertSort(SqList_sort *L);
 
-/*════╗
-║算法10.1║
-╚════*/
+/**
+算法10.1
+**/
 void InsertSort(SqList_sort *L) {
     int i, j;
 

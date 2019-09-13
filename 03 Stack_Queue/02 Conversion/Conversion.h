@@ -14,15 +14,15 @@
 #include "../01 SequenceStack/SequenceStack.h"        //**▲03 栈和队列**//
 
 /* 进制转换函数列表 */
-/*━━━━━━━━━━━━━━━━━┓
-┃(01)算法3.1：十进制数转八进制数。 ┃
-┗━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法3.1：十进制数转八进制数。 
+**/
 void conversion(int i);
 
 
-/*════╗
-║ 算法3.1║
-╚════*/
+/**
+ 算法3.1
+**/
 void conversion(int i) {
     SqStack S;
     SElemType_Sq e;

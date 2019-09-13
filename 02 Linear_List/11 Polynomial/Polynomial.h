@@ -28,50 +28,50 @@ typedef ELinkList Polynomial;            //一元多项式
 
 
 /* 一元多项式函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法2.22：创建项数为m的一元多项式。 ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法2.22：创建项数为m的一元多项式。 
+**/
 void CreatPolyn_P(FILE *fp, Polynomial *P, int m);
 
-/*━━━━━━━━━━┓
-┃(02)销毁一元多项式。┃
-┗━━━━━━━━━━*/
+/**
+(02)销毁一元多项式。
+**/
 void DestroyPolyn_P(Polynomial *P);
 
-/*━━━━━━━━━━━━━┓
-┃(03)返回一元多项式的项数。┃
-┗━━━━━━━━━━━━━*/
+/**
+(03)返回一元多项式的项数。
+**/
 int PolynLength_P(Polynomial P);
 
-/*━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(04)算法2.23：一元多项式加法Pa=Pa+Pb，销毁Pb。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━*/
+/**
+(04)算法2.23：一元多项式加法Pa=Pa+Pb，销毁Pb。
+**/
 void AddPolyn_P(Polynomial *Pa, Polynomial *Pb);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(05)一元多项式减法Pa=Pa-Pb，销毁Pb。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(05)一元多项式减法Pa=Pa-Pb，销毁Pb。
+**/
 void SubtractPolyn_P(Polynomial *Pa, Polynomial *Pb);
 
-/*━━━━━━━━━━━━━━━━━━┓
-┃(06)一元多项式乘法Pa=Pa*Pb，销毁Pb。┃
-┗━━━━━━━━━━━━━━━━━━*/
+/**
+(06)一元多项式乘法Pa=Pa*Pb，销毁Pb。
+**/
 void MultiplyPolyn_P(Polynomial *Pa, Polynomial *Pb);
 
-/*━━━━━━━━━━━━━━┓
-┃(07)比较c1项和c2项指数大小。┃
-┗━━━━━━━━━━━━━━*/
+/**
+(07)比较c1项和c2项指数大小。
+**/
 int Cmp_exp(ElemType_P c1, ElemType_P c2);
 
-/*━━━━━━━━━━━━┓
-┃(08)打印输出一元多项式。┃
-┗━━━━━━━━━━━━*/
+/**
+(08)打印输出一元多项式。
+**/
 void PrintPolyn_P(Polynomial P);
 
 
-/*═════╗
-║ 算法2.22 ║ 
-╚═════*/
+/**
+ 算法2.22  
+**/
 void CreatPolyn_P(FILE *fp, Polynomial *P, int m) {
     PositionPtr h;
     ElemType_P e;
@@ -104,9 +104,9 @@ int PolynLength_P(Polynomial P) {
     return ListLength_E(P);
 }
 
-/*═════╗
-║ 算法2.23 ║ 
-╚═════*/
+/**
+ 算法2.23  
+**/
 void AddPolyn_P(Polynomial *Pa, Polynomial *Pb) {
     PositionPtr ha, hb;
     PositionPtr qa, qb;

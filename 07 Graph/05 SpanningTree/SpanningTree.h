@@ -15,20 +15,20 @@
 #include "../../06 Tree_BinaryTree/07 ChildSiblingTree/ChildSiblingTree.h"    //**▲06 树和二叉树**//
 
 /* 无向图生成树函数列表 */
-/*━━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法7.7：创建无向图的生成树（森林） ┃
-┗━━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法7.7：创建无向图的生成树（森林） 
+**/
 void DFSForest(MGraph G, CSTree *T);
 
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(02)算法7.8：生成结点v起始的树（森林）┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(02)算法7.8：生成结点v起始的树（森林）
+**/
 void DFSTree(MGraph G, int v, CSTree *T);
 
 
-/*════╗
-║ 算法7.7║
-╚════*/
+/**
+ 算法7.7
+**/
 void DFSForest(MGraph G, CSTree *T) {
     int v;
     CSTree p, q;
@@ -58,9 +58,9 @@ void DFSForest(MGraph G, CSTree *T) {
     }
 }
 
-/*════╗
-║ 算法7.8║
-╚════*/
+/**
+ 算法7.8
+**/
 void DFSTree(MGraph G, int v, CSTree *T) {
     Status first;
     int w;

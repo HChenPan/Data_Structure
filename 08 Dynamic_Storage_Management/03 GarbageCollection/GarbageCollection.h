@@ -15,15 +15,15 @@
 #include "../../05 Array_GeneralizedList/05 GeneralizedList-H&T/GeneralizedList-H-T.h" //**05 Array_GeneralizedList**//
 
 /* 无用单元收集函数列表 */
-/*━━━━━━━━━━━━━━━━━━━┓
-┃(01)算法8.3：遍历广义表（不利用栈）。 ┃
-┗━━━━━━━━━━━━━━━━━━━*/
+/**
+(01)算法8.3：遍历广义表（不利用栈）。 
+**/
 void MakeList(GList G);
 
 
-/*════╗
-║ 算法8.3║
-╚════*/
+/**
+ 算法8.3
+**/
 void MakeList(GList G) {
     GList t, p, q;
 
